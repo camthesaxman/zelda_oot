@@ -1,0 +1,407 @@
+CloudMax's NTSC 1.0 RAM Notes
+	ASM
+		Global
+			CPU 0x80071A28: ADDIU V0, R0, 0x0001      #Egg Hatch Start Button Index.
+				Set it to 0x0 to include the B Button in the loop, allowing Eggs to hatch on the B Button.
+			CPU 0x80079B1C: BNEZ  T0, 0x80079B2C      #Used to determine if you have access to silver & gold gauntlet strength
+				T0 = Age
+			CPU 0x80079240: BEQL  T0, R0, 0x80079288  #Used to determine if you should use Child or Adult Movement Speed
+				T0 = Age
+		While NOT Pausing
+			CPU 0x80395B00: BEQL  T6, R0, 0x80395D68  #Used to determine if you can enter a crawlspace
+				T6 = Age
+			CPU 0x8038BDA4: BEQL  T8, R0, 0x8038BDB8  #Used to disable hookshot/longshot in midair
+				T8 = Is Standing State
+				Remove the branch to make hookshot/longshot usable in midair.
+	Data
+		MEM 0x8011A5D0: [Save] #This is the Save Data
+			MEM 0x8011A5D0: [Word]  #Entrance Index
+			MEM 0x8011A5D4: [Word]  #Age Modifier
+				0x0 Adult
+				0x1 Child
+			MEM 0x8011A5DC: [Half]  #Time of Day
+			MEM 0x8011A5E0: [Word]  #Day/Night Modifier
+				0x0 Day
+				0x1 Night
+			MEM 0x8011A5F2: [Half]  #Death Counter
+			MEM 0x8011A5F4: [Dble]  #Name
+			MEM 0x8011A5FE: [Half]  #Heart Containers
+				0x10 is 1 heart containers
+			MEM 0x8011A600: [Half]  #Health
+				0x10 is 1 full heart
+			MEM 0x8011A603: [Byte]  #Magic
+				0x30 is a filled normal bar
+				0x60 is a filled double bar
+			MEM 0x8011A604: [Half]  #Rupees
+			MEM 0x8011A638: [Word]  #Equipped Items ID
+				Offset 0x0 B Button
+				Offset 0x1 C-Left
+				Offset 0x2 C-Down
+				Offset 0x3 C-Right
+			MEM 0x8011A63C: [Word]  #Equipped Items Slot
+				Offset 0x0 C-Left
+				Offset 0x1 C-Down
+				Offset 0x2 C-Right
+				Offset 0x3 Unused
+			MEM 0x8011A640: [Byte]  #Equipped Tunic & Boots
+				0x01 Kokiri Tunic
+				0x02 Goron Tunic
+				0x03 Zora Tunic
+				0x10 Kokiri Boots
+				0x20 Iron Boots
+				0x30 Hover Boots
+			MEM 0x8011A641: [Byte]  #Equipped Sword & Shield
+				0x01 Kokiri Sword
+				0x02 Master Sword
+				0x03 Biggoron's Sword
+				0x10 Kokiri Shield
+				0x20 Hylian Shield
+				0x30 Mirror Shield
+			MEM 0x8011A644: [Tble]  #Item Slot Item IDs
+				Entries
+					0x00 Deku Stick
+					0x01 Deku Nut
+					0x02 Bomb
+					0x03 Fairy Bow
+					0x04 Fire Arrow
+					0x05 Din's Fire
+					0x06 Slingshot
+					0x07 Ocarina
+					0x08 Bombchu
+					0x09 Hookshot/Longshot
+					0x0A Ice Arrow
+					0x0B Farore's Wind
+					0x0C Boomerang
+					0x0D Lens of Truth
+					0x0E Magical Beans
+					0x0F Megaton Hammer
+					0x10 Light Arrow
+					0x11 Nayru's Love
+					0x12 Bottle 1
+					0x13 Bottle 2
+					0x14 Bottle 3
+					0x15 Bottle 4
+					0x16 Adult Trade Item
+					0x17 Child Trade Item
+			MEM 0x8011A65C: [Tble]  #Item Slot Amount
+				Entries
+					0x00 Deku Stick
+					0x01 Deku Nut
+					0x02 Bomb
+					0x03 Fairy Bow
+					0x04 Fire Arrow
+					0x05 Din's Fire
+					0x06 Slingshot
+					0x07 Ocarina
+					0x08 Bombchu
+					0x09 Hookshot/Longshot
+					0x0A Ice Arrow
+					0x0B Farore's Wind
+					0x0C Boomerang
+					0x0D Lens of Truth
+					0x0E Magical Beans
+			MEM 0x8011A66B: [Byte]  #Magical Beans Available
+				Stores how many beans you've purchased. This byte decides the item cost & how many additional beans you're able to purchase.
+			MEM 0x8011A66C: [Byte]  #Tunic & Boots
+				0x01 Kokiri Tunic
+				0x02 Goron Tunic
+				0x04 Zora Tunic
+				0x10 Kokiri Boots
+				0x20 Iron Boots
+				0x40 Hover Boots
+			MEM 0x8011A66C: [Byte]  #Sword & Shield
+				0x01 Kokiri Sword
+				0x02 Master Sword
+				0x04 Biggoron's Sword / Giant's Knife
+				0x08 Broken Giant's Knife Icon Flag
+					This will cause the 3rd Sword Slot to be displayed as the Broken Giant's Knife
+				0x10 Kokiri Shield
+				0x20 Hylian Shield
+				0x40 Mirror Shield
+			MEM 0x8011A671: [Byte]  #Deku Stick & Deku Nut Capacity
+				0x02 Deku Stick 10
+				0x04 Deku Stick 20
+				0x08 Deku Stick 30
+				0x10 Deku Nut 20
+				0x20 Deku Nut 30
+				0x30 Deku Nut 40
+			MEM 0x8011A672: [Byte]  #Bullet Bag, Dive Meter & Wallet
+				0x02 Silver Scale
+				0x04 Golden Scale
+				0x10 Adult's Wallet
+				0x20 Giant's Wallet
+				0x40 Bullet Bag 30
+				0x80 Bullet Bag 40
+				0xC0 Bullet Bag 50
+			MEM 0x8011A673: [Byte]  #Quiver, Bomb Bag, Strength Upgrade
+				0x01 Quiver 30
+				0x02 Quiver 40
+				0x03 Quiver 50
+				0x08 Bomb Bag 20
+				0x10 Bomb Bag 30
+				0x18 Bomb Bag 40
+				0x40 Goron's Bracelet
+				0x80 Silver Gauntlets
+				0xC0 Golden Gauntlets
+			MEM 0x8011A6A0: [Half]  #Gold Skulltula Tokens
+			MEM 0x8011B46C: [Tble]  #Golden Skulltula Flag Table
+				Stores which skulltulas you've killed each each area.
+				Each area entry is 1 byte long.
+				Entries
+					0x00 Forest Temple
+					0x01 Jabu Jabu's Belly
+					0x02 Dodongo's Cavern
+					0x03 Deku Tree
+					0x04 Shadow Temple
+					0x05 Spirit Temple
+					0x06 Water Temple
+					0x07 Fire Temple
+					0x08 Lon Lon Ranch
+					0x09 Hyrule Field
+					0x0A Ice Cavern
+					0x0B Bottom of the Well
+					0x0C Death Mountain
+					0x0D Market
+					0x0E Lost Woods
+					0x0F Kokiri Forest
+					0x10 Gerudo Valley
+					0x11 Lake Hylia
+					0x12 Zora's Domain
+					0x13 Kakariko Village
+					0x14 Unused
+					0x15 Unused
+					0x16 Haunted Wasteland
+					0x17 Gerudo Fortess
+			MEM 0x8011B492: [Half]  #Record Fish Size
+				0x7F is the highest value
+			MEM 0x8011B500: [Word]  #Sword Flag
+				0x0 You have a sword equipped
+				0x1 You don't have a sword equipped
+				The game will treat the B Button differently when this Flag isn't set.
+				When the flag is set, you will not retrieve the item stored in Temporary B when dying and saving, instead the B Button will become blank.
+		MEM 0x800F7618: [Tble] #Wallet Digits Table
+			This table specifies how many digits each wallet size uses for the rupee counter.
+			Setting it to a value higher than 0x4 will cause visual errors.
+			When the counter is 4 digits long, the 4th digit will always be 0, and only the first 3 are used.
+			Each entry is a halfword.
+			Entries
+				0x0 Default Wallet (0002)
+				0x2 Adult's Wallet (0003)
+				0x4 Giant's Wallet (0003)
+				0x6 Unused Wallet  (0000)
+		MEM 0x800F8CCC: [Tble] #Capacity Table
+			Each entry is a halfword.
+			Entries
+				0x00 No Quiver (00)
+				0x02 Quiver (30)
+				0x04 Big Quiver (40)
+				0x06 Biggest Quiver (50)
+				0x08 No Bomb Bag (00)
+				0x0A Bomb Bag (20)
+				0x0C Big Bomb Bag (30)
+				0x0E Biggest Bomb Bag (40)
+				0x10 - 0x1E Unused (00)
+				0x20 Default Wallet (099)
+				0x22 Adult's Wallet (200)
+				0x24 Giant's Wallet(500)
+				0x26 Unused Wallet  (500)
+				0x28 No Bullet Bag (00)
+				0x2A Bullet Bag (30)
+				0x2C Big Bullet Bag (40)
+				0x2E Biggest Bullet Bag (50)
+				0x30 Deku Stick (00)
+				0x32 Deku Stick (10)
+				0x34 Deku Stick (20)
+				0x36 Deku Stick (30)
+				0x38 Deku Nut (00)
+				0x3A Deku Nut (20)
+				0x3C Deku Nut (30)
+				0x3E Deku Nut (40)
+		MEM 0x801DAB72: [Byte] #Item in Hand (Item ID)
+		MEM 0x801DB263: [Byte] #Is Attacking
+			0x0 Is not attacking #This will deactivate ISG
+			0x1 Is attacking     #This will activate ISG
+		MEM 0x8011B9B2: [Byte] #Temp B (Stores your B item when on a horse, fishing, shooting gallery, etc.)
+		MEM 0x803A54F0: [Byte] #Pause Temp B (Temp B is moved here while pausing)
+		MEM 0x801DAB70: [Byte] #Last Pressed Item Button
+			0x0 B Button
+			0x1 C-Left
+			0x2 C-Down
+			0x3 C-Right
+		MEM 0x801DAB7F: [Byte] #Currently Equipped Mask
+			0x0 No Mask
+			0x1 Keaton Mask
+			0x2 Skull Mask
+			0x3 Spooky Mask
+			0x4 Bunny Hood
+			0x5 Goron Mask
+			0x6 Zora Mask
+			0x7 Gerudo Mask
+			0x8 Mask of Truth
+		MEM 0x801D8DD5: [Byte] #Menu State
+			This byte is used to determine which state the Pause Menu & Game Over screen is in.
+			By setting the byte to different values, we're able to navigate the menues.
+			States
+				Open Pause Menu
+					0x01 Load and Open Pause Menu   #Only run when a menu isn't loaded.
+						This will load the Menu, causing a crash if a menu is already loaded.
+						The Pause Menu will get stuck in the opening process, you have to manually set it to 0x6 to end it.
+					0x02 Open Pause Menu            #Only run when a menu is loaded.
+						This will not load the Menu, causing a crash if a menu isn't loaded.
+						The Pause Menu will get stuck in the opening process, you have to manually set it to 0x6 to end it.
+					0x06 End Pause Menu Opening     #Only run when a menu is loaded.
+						This can be used to return to the Pause Menu from other panels, and end the opening process.
+				Pause Menu Save Panel
+					0x07 Open Pause Menu Save Panel #Only run when pause menu is loaded.
+						This Panel is part of the Pause Menu, so the game will crash if it isn't loaded.
+				Close Pause Menu
+					0x12 Close Pause Menu           #Only run when pause menu is loaded.
+						The game will crash if the pause menu isn't loaded.
+					0x13 End Pause Menu Closing     #Only run when a menu isn't loaded.
+						This is used at the end of the closing process, after the menu has been unloaded, the game will crash if ran when it is still loaded.
+				Open Game Over Panel
+					0x08 Load and Open GO Panel     #Only run when a menu isn't loaded.
+						This will load the Menu, causing a crash if a menu is already loaded.
+					0x09 Open GO Panel              #Only run when a menu is loaded.
+						This will not load the Menu, causing a crash if a menu isn't loaded.
+					0x0E Finish Opening GO Panel    #Only run when a menu is loaded.
+						This will instantly open up the Game Over Save Panel, causing a crash if a menu isn't loaded.
+				Game Over Panel
+					0x0F Saved                      #Only run when a menu is loaded.
+						This is used after saving in the game over panel, brings up "Game Saved." screen. Will crash if a menu isn't loaded.
+					0x10 Open Continue / Quit Panel #Only run when a menu is loaded.
+						This will bring up the Continue / Quit Panel, causing a crash if a menu isn't loaded.
+					0x11 Run Continue / Quit        #Does not require a menu.
+						Uses the Selected Menu Option byte to determine option.
+						0x0 Continue
+						0x4 Quit
+		MEM 0x801D8E60: [Byte] #Selected Menu Option
+			0x0 1st Menu Option
+			0x4 2nd Menu Option
+		MEM 0x800F7350: [Tble] #Scene Item Restriction Table
+			Each scene entry is 1 word long.
+			Table Entry Format
+				IDXXYYZZ
+				ID = Scene ID
+				XX = Restriction Flags
+					0x01, 0x02, 0x03 Bottles
+					0x04, 0x08, 0x0C Unused?
+					0x10, 0x20, 0x30 B Button
+					0x40, 0x80, 0xC0 Unused?
+				YY = Restriction Flags
+					0x01, 0x02, 0x03 Warp Songs
+					0x04, 0x08, 0x0C Ocarina
+					0x10, 0x20, 0x30 Hookshot & Longshot
+					0x40, 0x80, 0xC0 Trade Items
+				ZZ = Restriction Flags
+					0x01, 0x02, 0x03 Global
+					0x04, 0x08, 0x0C Din's Fire & Nayru's Love
+					0x10, 0x20, 0x30 Farore's Wind
+					0x40, 0x80, 0xC0 Sun's Song
+		MEM 0x8039F194: [Tble] #Area Required Golden Skulltula Table
+			Each area entry is 1 byte long.
+			Entries
+				0x00 Deku Tree
+				0x01 Dodongo's Cavern
+				0x02 Jabu Jabu's Belly
+				0x03 Forest Temple
+				0x04 Fire Temple
+				0x05 Water Temple
+				0x06 Spirit Temple
+				0x07 Shadow Temple
+				0x08 Bottom of the Well
+				0x09 Ice Cavern
+				0x0A Hyrule Field
+				0x0B Lon Lon Ranch
+				0x0C Kokiri Forest
+				0x0D Lost Woods
+				0x0E Market
+				0x0F Death Mountain
+				0x10 Kakariko Village
+				0x11 Zora's Domain
+				0x12 Lake Hylia
+				0x13 Gerudo Valley
+				0x14 Gerudo Fortess
+				0x15 Haunted Wasteland
+	Functions
+		CPU 0x8000085C: dma Transfer
+			A0 = ram address
+			A1 = rom address
+			A2 = size
+		CPU 0x80000B0C: Get File
+			A0 = pointer to instance of structure with format:
+				${vv vv vv vv dd dd dd dd ss ss ss}
+					d = destination in ram (must be allocated!!!)
+					s = size of file
+					v = rom virtual address
+		CPU 0x80025110: Spawn Actor
+			A0 = $801CA0C4
+			A1 = $801C84A0
+			A2 = Actor Number
+				Actor List: http://wiki.spinout182.com/w/Complete_Actor_Listing
+			SP = floating point x, y, z position; Half-float (s10.5) x, y, z rotation; actor variable
+		CPU 0x800721F4: Modify Item Amount
+			A0 = Item ID
+			A1 = Amount to add
+		CPU 0x80079200: Update Physics
+			This function runs whenever links physics is altered, when changing boots, entering water, exiting water, etc.
+			A1 = 0x801DAA30
+		CPU 0x800646F0: Play Sound Effect
+			The actual function for calling sound effects seem to be located at 0x800C806C but calling it from the address above has proven to be safer for me.
+			A0 = Sound Effect
+				0x482F Gain Rupee Repeater (This is the sound that repeats while gaining or losing rupees)
+				0x4803 Gain Rupee (The main sound that plays when gaining a rupee)
+				0x4806 Disabled Item
+				0x4807 Success (Played the correct song at a location, etc.)
+				0x4808 Change Menu Screen
+				0x4809 Move Menu Cursor
+				0x480A Emulator Crash
+				0x480C Enter Z-Target
+				0x4824 Pick Up Ammo / Magic
+				0x0835 Pull out Item
+		CPU 0x800C6B54: Play Sequence
+			A0 = $00000000
+			A1 = sequence number
+				Sequences: http://wiki.spinout182.com/w/Zelda_64:_OoT_Music_Values
+		CPU 0x800CAA70: Set Background Music
+			A0 = sequence number
+				Sequences: http://wiki.spinout182.com/w/Zelda_64:_OoT_Music_Values
+		CPU 0x800721CC: Rupee Modifier
+			The amount of rupees to increase/decrease, it'll be added to the current amount of rupees you're currently getting/loosing
+			A0 = Amount
+		CPU 0x8006FB50: Update Item Icon
+			This will update the item icon of the specified item button. (useful when changing a button Item ID directly)
+			A0 = 0x801C84A0
+			A1 = Button ID
+				0x0 B Button
+				0x1 C-Left
+				0x2 C-Down
+				0x3 C-Right
+		CPU 0x8006FDCC: Receive Item        #Using Item Index as Argument
+			The game will give you the item specified, and place it in it's correct slot. This will not update items that are equipped.
+			A0 = 0x801C84A0
+			A1 = Item ID
+		CPU 0x80071B7C: Set Item            #Using Button Index as Argument
+			This will change an item using a button index as the argument.
+			A0 = 0x801C84A0
+			A1 = Item ID
+			A2 = Button Index
+				0x0 B Button
+				0x1 C-Left
+				0x2 C-Down
+				0x3 C-Right
+		String Functions
+			The Stack Pointer must be set up in a specific way or the game may crash.
+			CPU 0x800CBE58: Set String RGB
+				A0 = Stack Pointer
+				A1 = Red
+				A2 = Green
+				A3 = Blue
+			CPU 0x800CBEC8: Set String XY
+				A0 = Stack Pointer
+				A1 = X Pos
+				A2 = Y Pos
+			CPU 0x800CC588: Set String
+				A0 = Stack Pointer
+				A1 = Text
+				A2 = Text Variable

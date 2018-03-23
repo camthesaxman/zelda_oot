@@ -1,0 +1,1528 @@
+# This file is used by the makeromfs tool and lists all of the files contained in the ROM.
+
+file baserom/makerom.bin
+file baserom/boot.bin
+filetable
+file baserom/Audiobank.bin
+file baserom/Audioseq.bin
+file baserom/Audiotable.bin
+file baserom/jpn_font_static.bin
+file baserom/link_animetion.bin align(0x1000)
+file baserom/icon_item_static.bin align(0x1000)
+file baserom/icon_item_24_static.bin align(0x1000)
+file baserom/icon_item_field_static.bin.yaz0 align(0x1000)
+file baserom/icon_item_dungeon_static.bin.yaz0 align(0x1000)
+file baserom/icon_item_gameover_static.bin.yaz0 align(0x1000)
+file baserom/icon_item_jpn_static.bin.yaz0 align(0x1000)
+file baserom/icon_item_nes_static.bin.yaz0 align(0x1000)
+file baserom/item_name_static.bin align(0x1000)
+file baserom/map_name_static.bin align(0x1000)
+file baserom/do_action_static.bin align(0x1000)
+file baserom/message_static.bin align(0x1000)
+file baserom/jpn_message_data_static.bin align(0x1000)
+file baserom/message_texture_static.bin align(0x1000)
+file baserom/nes_font_static.bin align(0x1000)
+file baserom/nes_message_data_static.bin align(0x1000)
+file baserom/staff_message_data_static.bin align(0x1000)
+file baserom/map_grand_static.bin align(0x1000)
+file baserom/map_i_static.bin align(0x1000)
+file baserom/map_48x85_static.bin align(0x1000)
+file baserom/code.bin.yaz0 align(0x1000)
+file baserom/n64dd.bin.yaz0
+file baserom/ovl_title.bin.yaz0
+file baserom/ovl_select.bin.yaz0
+file baserom/ovl_opening.bin.yaz0
+file baserom/ovl_file_choose.bin.yaz0
+file baserom/ovl_kaleido_scope.bin.yaz0
+file baserom/ovl_player_actor.bin.yaz0
+file baserom/ovl_map_mark_data.bin.yaz0
+file baserom/ovl_En_Test.bin.yaz0
+file baserom/ovl_En_GirlA.bin.yaz0
+file baserom/ovl_En_Part.bin.yaz0
+file baserom/ovl_En_Light.bin.yaz0
+file baserom/ovl_En_Door.bin.yaz0
+file baserom/ovl_En_Box.bin.yaz0
+file baserom/ovl_En_Poh.bin.yaz0
+file baserom/ovl_En_Okuta.bin.yaz0
+file baserom/ovl_En_Bom.bin.yaz0
+file baserom/ovl_En_Wallmas.bin.yaz0
+file baserom/ovl_En_Dodongo.bin.yaz0
+file baserom/ovl_En_Firefly.bin.yaz0
+file baserom/ovl_En_Horse.bin.yaz0
+file baserom/ovl_En_Arrow.bin.yaz0
+file baserom/ovl_En_Elf.bin.yaz0
+file baserom/ovl_En_Niw.bin.yaz0
+file baserom/ovl_En_Tite.bin.yaz0
+file baserom/ovl_En_Reeba.bin.yaz0
+file baserom/ovl_En_Peehat.bin.yaz0
+file baserom/ovl_En_Holl.bin.yaz0
+file baserom/ovl_En_Scene_Change.bin.yaz0
+file baserom/ovl_En_Zf.bin.yaz0
+file baserom/ovl_En_Hata.bin.yaz0
+file baserom/ovl_Boss_Dodongo.bin.yaz0
+file baserom/ovl_Boss_Goma.bin.yaz0
+file baserom/ovl_En_Zl1.bin.yaz0
+file baserom/ovl_En_Viewer.bin.yaz0
+file baserom/ovl_En_Goma.bin.yaz0
+file baserom/ovl_Bg_Pushbox.bin.yaz0
+file baserom/ovl_En_Bubble.bin.yaz0
+file baserom/ovl_Door_Shutter.bin.yaz0
+file baserom/ovl_En_Dodojr.bin.yaz0
+file baserom/ovl_En_Bdfire.bin.yaz0
+file baserom/ovl_En_Boom.bin.yaz0
+file baserom/ovl_En_Torch2.bin.yaz0
+file baserom/ovl_En_Bili.bin.yaz0
+file baserom/ovl_En_Tp.bin.yaz0
+file baserom/ovl_En_St.bin.yaz0
+file baserom/ovl_En_Bw.bin.yaz0
+file baserom/ovl_En_Eiyer.bin.yaz0
+file baserom/ovl_En_River_Sound.bin.yaz0
+file baserom/ovl_En_Horse_Normal.bin.yaz0
+file baserom/ovl_En_Ossan.bin.yaz0
+file baserom/ovl_Bg_Treemouth.bin.yaz0
+file baserom/ovl_Bg_Dodoago.bin.yaz0
+file baserom/ovl_Bg_Hidan_Dalm.bin.yaz0
+file baserom/ovl_Bg_Hidan_Hrock.bin.yaz0
+file baserom/ovl_En_Horse_Ganon.bin.yaz0
+file baserom/ovl_Bg_Hidan_Rock.bin.yaz0
+file baserom/ovl_Bg_Hidan_Rsekizou.bin.yaz0
+file baserom/ovl_Bg_Hidan_Sekizou.bin.yaz0
+file baserom/ovl_Bg_Hidan_Sima.bin.yaz0
+file baserom/ovl_Bg_Hidan_Syoku.bin.yaz0
+file baserom/ovl_En_Xc.bin.yaz0
+file baserom/ovl_Bg_Hidan_Curtain.bin.yaz0
+file baserom/ovl_Bg_Spot00_Hanebasi.bin.yaz0
+file baserom/ovl_En_Mb.bin.yaz0
+file baserom/ovl_En_Bombf.bin.yaz0
+file baserom/ovl_Bg_Hidan_Firewall.bin.yaz0
+file baserom/ovl_Bg_Dy_Yoseizo.bin.yaz0
+file baserom/ovl_En_Zl2.bin.yaz0
+file baserom/ovl_Bg_Hidan_Fslift.bin.yaz0
+file baserom/ovl_En_OE2.bin.yaz0
+file baserom/ovl_Bg_Ydan_Hasi.bin.yaz0
+file baserom/ovl_Bg_Ydan_Maruta.bin.yaz0
+file baserom/ovl_Boss_Ganondrof.bin.yaz0
+file baserom/ovl_En_Am.bin.yaz0
+file baserom/ovl_En_Dekubaba.bin.yaz0
+file baserom/ovl_En_M_Fire1.bin.yaz0
+file baserom/ovl_En_M_Thunder.bin.yaz0
+file baserom/ovl_Bg_Ddan_Jd.bin.yaz0
+file baserom/ovl_Bg_Breakwall.bin.yaz0
+file baserom/ovl_En_Jj.bin.yaz0
+file baserom/ovl_En_Horse_Zelda.bin.yaz0
+file baserom/ovl_Bg_Ddan_Kd.bin.yaz0
+file baserom/ovl_Door_Warp1.bin.yaz0
+file baserom/ovl_Obj_Syokudai.bin.yaz0
+file baserom/ovl_Item_B_Heart.bin.yaz0
+file baserom/ovl_En_Dekunuts.bin.yaz0
+file baserom/ovl_Bg_Menkuri_Kaiten.bin.yaz0
+file baserom/ovl_Bg_Menkuri_Eye.bin.yaz0
+file baserom/ovl_En_Vali.bin.yaz0
+file baserom/ovl_Bg_Mizu_Movebg.bin.yaz0
+file baserom/ovl_Bg_Mizu_Water.bin.yaz0
+file baserom/ovl_Arms_Hook.bin.yaz0
+file baserom/ovl_En_fHG.bin.yaz0
+file baserom/ovl_Bg_Mori_Hineri.bin.yaz0
+file baserom/ovl_En_Bb.bin.yaz0
+file baserom/ovl_Bg_Toki_Hikari.bin.yaz0
+file baserom/ovl_En_Yukabyun.bin.yaz0
+file baserom/ovl_Bg_Toki_Swd.bin.yaz0
+file baserom/ovl_En_Fhg_Fire.bin.yaz0
+file baserom/ovl_Bg_Mjin.bin.yaz0
+file baserom/ovl_Bg_Hidan_Kousi.bin.yaz0
+file baserom/ovl_Door_Toki.bin.yaz0
+file baserom/ovl_Bg_Hidan_Hamstep.bin.yaz0
+file baserom/ovl_En_Bird.bin.yaz0
+file baserom/ovl_En_Wood02.bin.yaz0
+file baserom/ovl_En_Lightbox.bin.yaz0
+file baserom/ovl_En_Pu_box.bin.yaz0
+file baserom/ovl_En_Trap.bin.yaz0
+file baserom/ovl_En_Arow_Trap.bin.yaz0
+file baserom/ovl_En_Vase.bin.yaz0
+file baserom/ovl_En_Ta.bin.yaz0
+file baserom/ovl_En_Tk.bin.yaz0
+file baserom/ovl_Bg_Mori_Bigst.bin.yaz0
+file baserom/ovl_Bg_Mori_Elevator.bin.yaz0
+file baserom/ovl_Bg_Mori_Kaitenkabe.bin.yaz0
+file baserom/ovl_Bg_Mori_Rakkatenjo.bin.yaz0
+file baserom/ovl_En_Vm.bin.yaz0
+file baserom/ovl_Demo_Effect.bin.yaz0
+file baserom/ovl_Demo_Kankyo.bin.yaz0
+file baserom/ovl_Bg_Hidan_Fwbig.bin.yaz0
+file baserom/ovl_En_Floormas.bin.yaz0
+file baserom/ovl_En_Heishi1.bin.yaz0
+file baserom/ovl_En_Rd.bin.yaz0
+file baserom/ovl_En_Po_Sisters.bin.yaz0
+file baserom/ovl_Bg_Heavy_Block.bin.yaz0
+file baserom/ovl_Bg_Po_Event.bin.yaz0
+file baserom/ovl_Obj_Mure.bin.yaz0
+file baserom/ovl_En_Sw.bin.yaz0
+file baserom/ovl_Boss_Fd.bin.yaz0
+file baserom/ovl_Object_Kankyo.bin.yaz0
+file baserom/ovl_En_Du.bin.yaz0
+file baserom/ovl_En_Fd.bin.yaz0
+file baserom/ovl_En_Horse_Link_Child.bin.yaz0
+file baserom/ovl_Door_Ana.bin.yaz0
+file baserom/ovl_Bg_Spot02_Objects.bin.yaz0
+file baserom/ovl_Bg_Haka.bin.yaz0
+file baserom/ovl_Magic_Wind.bin.yaz0
+file baserom/ovl_Magic_Fire.bin.yaz0
+file baserom/ovl_En_Ru1.bin.yaz0
+file baserom/ovl_Boss_Fd2.bin.yaz0
+file baserom/ovl_En_Fd_Fire.bin.yaz0
+file baserom/ovl_En_Dh.bin.yaz0
+file baserom/ovl_En_Dha.bin.yaz0
+file baserom/ovl_En_Rl.bin.yaz0
+file baserom/ovl_En_Encount1.bin.yaz0
+file baserom/ovl_Demo_Du.bin.yaz0
+file baserom/ovl_Demo_Im.bin.yaz0
+file baserom/ovl_Demo_Tre_Lgt.bin.yaz0
+file baserom/ovl_En_Fw.bin.yaz0
+file baserom/ovl_Bg_Vb_Sima.bin.yaz0
+file baserom/ovl_En_Vb_Ball.bin.yaz0
+file baserom/ovl_Bg_Haka_Megane.bin.yaz0
+file baserom/ovl_Bg_Haka_MeganeBG.bin.yaz0
+file baserom/ovl_Bg_Haka_Ship.bin.yaz0
+file baserom/ovl_Bg_Haka_Sgami.bin.yaz0
+file baserom/ovl_En_Heishi2.bin.yaz0
+file baserom/ovl_En_Encount2.bin.yaz0
+file baserom/ovl_En_Fire_Rock.bin.yaz0
+file baserom/ovl_En_Brob.bin.yaz0
+file baserom/ovl_Mir_Ray.bin.yaz0
+file baserom/ovl_Bg_Spot09_Obj.bin.yaz0
+file baserom/ovl_Bg_Spot18_Obj.bin.yaz0
+file baserom/ovl_Boss_Va.bin.yaz0
+file baserom/ovl_Bg_Haka_Tubo.bin.yaz0
+file baserom/ovl_Bg_Haka_Trap.bin.yaz0
+file baserom/ovl_Bg_Haka_Huta.bin.yaz0
+file baserom/ovl_Bg_Haka_Zou.bin.yaz0
+file baserom/ovl_Bg_Spot17_Funen.bin.yaz0
+file baserom/ovl_En_Syateki_Itm.bin.yaz0
+file baserom/ovl_En_Syateki_Man.bin.yaz0
+file baserom/ovl_En_Tana.bin.yaz0
+file baserom/ovl_En_Nb.bin.yaz0
+file baserom/ovl_Boss_Mo.bin.yaz0
+file baserom/ovl_En_Sb.bin.yaz0
+file baserom/ovl_En_Bigokuta.bin.yaz0
+file baserom/ovl_En_Karebaba.bin.yaz0
+file baserom/ovl_Bg_Bdan_Objects.bin.yaz0
+file baserom/ovl_Demo_Sa.bin.yaz0
+file baserom/ovl_Demo_Go.bin.yaz0
+file baserom/ovl_En_In.bin.yaz0
+file baserom/ovl_En_Tr.bin.yaz0
+file baserom/ovl_Bg_Spot16_Bombstone.bin.yaz0
+file baserom/ovl_Bg_Hidan_Kowarerukabe.bin.yaz0
+file baserom/ovl_Bg_Bombwall.bin.yaz0
+file baserom/ovl_En_Ru2.bin.yaz0
+file baserom/ovl_Obj_Dekujr.bin.yaz0
+file baserom/ovl_Bg_Mizu_Uzu.bin.yaz0
+file baserom/ovl_Bg_Spot06_Objects.bin.yaz0
+file baserom/ovl_Bg_Ice_Objects.bin.yaz0
+file baserom/ovl_Bg_Haka_Water.bin.yaz0
+file baserom/ovl_En_Ma2.bin.yaz0
+file baserom/ovl_En_Bom_Chu.bin.yaz0
+file baserom/ovl_En_Horse_Game_Check.bin.yaz0
+file baserom/ovl_Boss_Tw.bin.yaz0
+file baserom/ovl_En_Rr.bin.yaz0
+file baserom/ovl_En_Ba.bin.yaz0
+file baserom/ovl_En_Bx.bin.yaz0
+file baserom/ovl_En_Anubice.bin.yaz0
+file baserom/ovl_En_Anubice_Fire.bin.yaz0
+file baserom/ovl_Bg_Mori_Hashigo.bin.yaz0
+file baserom/ovl_Bg_Mori_Hashira4.bin.yaz0
+file baserom/ovl_Bg_Mori_Idomizu.bin.yaz0
+file baserom/ovl_Bg_Spot16_Doughnut.bin.yaz0
+file baserom/ovl_Bg_Bdan_Switch.bin.yaz0
+file baserom/ovl_En_Ma1.bin.yaz0
+file baserom/ovl_Boss_Ganon.bin.yaz0
+file baserom/ovl_Boss_Sst.bin.yaz0
+file baserom/ovl_En_Ny.bin.yaz0
+file baserom/ovl_En_Fr.bin.yaz0
+file baserom/ovl_Item_Shield.bin.yaz0
+file baserom/ovl_Bg_Ice_Shelter.bin.yaz0
+file baserom/ovl_En_Ice_Hono.bin.yaz0
+file baserom/ovl_Item_Ocarina.bin.yaz0
+file baserom/ovl_Magic_Dark.bin.yaz0
+file baserom/ovl_Demo_6K.bin.yaz0
+file baserom/ovl_En_Anubice_Tag.bin.yaz0
+file baserom/ovl_Bg_Haka_Gate.bin.yaz0
+file baserom/ovl_Bg_Spot15_Saku.bin.yaz0
+file baserom/ovl_Bg_Jya_Goroiwa.bin.yaz0
+file baserom/ovl_Bg_Jya_Zurerukabe.bin.yaz0
+file baserom/ovl_Bg_Jya_Cobra.bin.yaz0
+file baserom/ovl_Bg_Jya_Kanaami.bin.yaz0
+file baserom/ovl_Fishing.bin.yaz0
+file baserom/ovl_Obj_Oshihiki.bin.yaz0
+file baserom/ovl_Bg_Gate_Shutter.bin.yaz0
+file baserom/ovl_Eff_Dust.bin.yaz0
+file baserom/ovl_Bg_Spot01_Fusya.bin.yaz0
+file baserom/ovl_Bg_Spot01_Idohashira.bin.yaz0
+file baserom/ovl_Bg_Spot01_Idomizu.bin.yaz0
+file baserom/ovl_Bg_Po_Syokudai.bin.yaz0
+file baserom/ovl_Bg_Ganon_Otyuka.bin.yaz0
+file baserom/ovl_Bg_Spot15_Rrbox.bin.yaz0
+file baserom/ovl_Bg_Umajump.bin.yaz0
+file baserom/ovl_En_Insect.bin.yaz0
+file baserom/ovl_En_Butte.bin.yaz0
+file baserom/ovl_En_Fish.bin.yaz0
+file baserom/ovl_Bg_Spot08_Iceblock.bin.yaz0
+file baserom/ovl_Item_Etcetera.bin.yaz0
+file baserom/ovl_Arrow_Fire.bin.yaz0
+file baserom/ovl_Arrow_Ice.bin.yaz0
+file baserom/ovl_Arrow_Light.bin.yaz0
+file baserom/ovl_Obj_Kibako.bin.yaz0
+file baserom/ovl_Obj_Tsubo.bin.yaz0
+file baserom/ovl_En_Wonder_Item.bin.yaz0
+file baserom/ovl_En_Ik.bin.yaz0
+file baserom/ovl_Demo_Ik.bin.yaz0
+file baserom/ovl_En_Skj.bin.yaz0
+file baserom/ovl_En_Skjneedle.bin.yaz0
+file baserom/ovl_En_G_Switch.bin.yaz0
+file baserom/ovl_Demo_Ext.bin.yaz0
+file baserom/ovl_Demo_Shd.bin.yaz0
+file baserom/ovl_En_Dns.bin.yaz0
+file baserom/ovl_Elf_Msg.bin.yaz0
+file baserom/ovl_En_Honotrap.bin.yaz0
+file baserom/ovl_En_Tubo_Trap.bin.yaz0
+file baserom/ovl_Obj_Ice_Poly.bin.yaz0
+file baserom/ovl_Bg_Spot03_Taki.bin.yaz0
+file baserom/ovl_Bg_Spot07_Taki.bin.yaz0
+file baserom/ovl_En_Fz.bin.yaz0
+file baserom/ovl_En_Po_Relay.bin.yaz0
+file baserom/ovl_Bg_Relay_Objects.bin.yaz0
+file baserom/ovl_En_Diving_Game.bin.yaz0
+file baserom/ovl_En_Kusa.bin.yaz0
+file baserom/ovl_Obj_Bean.bin.yaz0
+file baserom/ovl_Obj_Bombiwa.bin.yaz0
+file baserom/ovl_Obj_Switch.bin.yaz0
+file baserom/ovl_Obj_Elevator.bin.yaz0
+file baserom/ovl_Obj_Lift.bin.yaz0
+file baserom/ovl_Obj_Hsblock.bin.yaz0
+file baserom/ovl_En_Okarina_Tag.bin.yaz0
+file baserom/ovl_En_Yabusame_Mark.bin.yaz0
+file baserom/ovl_En_Goroiwa.bin.yaz0
+file baserom/ovl_En_Ex_Ruppy.bin.yaz0
+file baserom/ovl_En_Toryo.bin.yaz0
+file baserom/ovl_En_Daiku.bin.yaz0
+file baserom/ovl_En_Nwc.bin.yaz0
+file baserom/ovl_En_Blkobj.bin.yaz0
+file baserom/ovl_Item_Inbox.bin.yaz0
+file baserom/ovl_En_Ge1.bin.yaz0
+file baserom/ovl_Obj_Blockstop.bin.yaz0
+file baserom/ovl_En_Sda.bin.yaz0
+file baserom/ovl_En_Clear_Tag.bin.yaz0
+file baserom/ovl_En_Niw_Lady.bin.yaz0
+file baserom/ovl_En_Gm.bin.yaz0
+file baserom/ovl_En_Ms.bin.yaz0
+file baserom/ovl_En_Hs.bin.yaz0
+file baserom/ovl_Bg_Ingate.bin.yaz0
+file baserom/ovl_En_Kanban.bin.yaz0
+file baserom/ovl_En_Heishi3.bin.yaz0
+file baserom/ovl_En_Syateki_Niw.bin.yaz0
+file baserom/ovl_En_Attack_Niw.bin.yaz0
+file baserom/ovl_Bg_Spot01_Idosoko.bin.yaz0
+file baserom/ovl_En_Sa.bin.yaz0
+file baserom/ovl_En_Wonder_Talk.bin.yaz0
+file baserom/ovl_Bg_Gjyo_Bridge.bin.yaz0
+file baserom/ovl_En_Ds.bin.yaz0
+file baserom/ovl_En_Mk.bin.yaz0
+file baserom/ovl_En_Bom_Bowl_Man.bin.yaz0
+file baserom/ovl_En_Bom_Bowl_Pit.bin.yaz0
+file baserom/ovl_En_Owl.bin.yaz0
+file baserom/ovl_En_Ishi.bin.yaz0
+file baserom/ovl_Obj_Hana.bin.yaz0
+file baserom/ovl_Obj_Lightswitch.bin.yaz0
+file baserom/ovl_Obj_Mure2.bin.yaz0
+file baserom/ovl_En_Go.bin.yaz0
+file baserom/ovl_En_Fu.bin.yaz0
+file baserom/ovl_En_Changer.bin.yaz0
+file baserom/ovl_Bg_Jya_Megami.bin.yaz0
+file baserom/ovl_Bg_Jya_Lift.bin.yaz0
+file baserom/ovl_Bg_Jya_Bigmirror.bin.yaz0
+file baserom/ovl_Bg_Jya_Bombchuiwa.bin.yaz0
+file baserom/ovl_Bg_Jya_Amishutter.bin.yaz0
+file baserom/ovl_Bg_Jya_Bombiwa.bin.yaz0
+file baserom/ovl_Bg_Spot18_Basket.bin.yaz0
+file baserom/ovl_En_Ganon_Organ.bin.yaz0
+file baserom/ovl_En_Siofuki.bin.yaz0
+file baserom/ovl_En_Stream.bin.yaz0
+file baserom/ovl_En_Mm.bin.yaz0
+file baserom/ovl_En_Ko.bin.yaz0
+file baserom/ovl_En_Kz.bin.yaz0
+file baserom/ovl_En_Weather_Tag.bin.yaz0
+file baserom/ovl_Bg_Sst_Floor.bin.yaz0
+file baserom/ovl_En_Ani.bin.yaz0
+file baserom/ovl_En_Ex_Item.bin.yaz0
+file baserom/ovl_Bg_Jya_Ironobj.bin.yaz0
+file baserom/ovl_En_Js.bin.yaz0
+file baserom/ovl_En_Jsjutan.bin.yaz0
+file baserom/ovl_En_Cs.bin.yaz0
+file baserom/ovl_En_Md.bin.yaz0
+file baserom/ovl_En_Hy.bin.yaz0
+file baserom/ovl_En_Ganon_Mant.bin.yaz0
+file baserom/ovl_En_Okarina_Effect.bin.yaz0
+file baserom/ovl_En_Mag.bin.yaz0
+file baserom/ovl_Door_Gerudo.bin.yaz0
+file baserom/ovl_Elf_Msg2.bin.yaz0
+file baserom/ovl_Demo_Gt.bin.yaz0
+file baserom/ovl_En_Po_Field.bin.yaz0
+file baserom/ovl_Efc_Erupc.bin.yaz0
+file baserom/ovl_Bg_Zg.bin.yaz0
+file baserom/ovl_En_Heishi4.bin.yaz0
+file baserom/ovl_En_Zl3.bin.yaz0
+file baserom/ovl_Boss_Ganon2.bin.yaz0
+file baserom/ovl_En_Kakasi.bin.yaz0
+file baserom/ovl_En_Takara_Man.bin.yaz0
+file baserom/ovl_Obj_Makeoshihiki.bin.yaz0
+file baserom/ovl_Oceff_Spot.bin.yaz0
+file baserom/ovl_End_Title.bin.yaz0
+file baserom/ovl_En_Torch.bin.yaz0
+file baserom/ovl_Demo_Ec.bin.yaz0
+file baserom/ovl_Shot_Sun.bin.yaz0
+file baserom/ovl_En_Dy_Extra.bin.yaz0
+file baserom/ovl_En_Wonder_Talk2.bin.yaz0
+file baserom/ovl_En_Ge2.bin.yaz0
+file baserom/ovl_Obj_Roomtimer.bin.yaz0
+file baserom/ovl_En_Ssh.bin.yaz0
+file baserom/ovl_En_Sth.bin.yaz0
+file baserom/ovl_Oceff_Wipe.bin.yaz0
+file baserom/ovl_Effect_Ss_Dust.bin.yaz0
+file baserom/ovl_Effect_Ss_KiraKira.bin.yaz0
+file baserom/ovl_Effect_Ss_Bomb.bin.yaz0
+file baserom/ovl_Effect_Ss_Bomb2.bin.yaz0
+file baserom/ovl_Effect_Ss_Blast.bin.yaz0
+file baserom/ovl_Effect_Ss_G_Spk.bin.yaz0
+file baserom/ovl_Effect_Ss_D_Fire.bin.yaz0
+file baserom/ovl_Effect_Ss_Bubble.bin.yaz0
+file baserom/ovl_Effect_Ss_G_Ripple.bin.yaz0
+file baserom/ovl_Effect_Ss_G_Splash.bin.yaz0
+file baserom/ovl_Effect_Ss_G_Magma.bin.yaz0
+file baserom/ovl_Effect_Ss_G_Fire.bin.yaz0
+file baserom/ovl_Effect_Ss_Lightning.bin.yaz0
+file baserom/ovl_Effect_Ss_Dt_Bubble.bin.yaz0
+file baserom/ovl_Effect_Ss_Hahen.bin.yaz0
+file baserom/ovl_Effect_Ss_Stick.bin.yaz0
+file baserom/ovl_Effect_Ss_Sibuki.bin.yaz0
+file baserom/ovl_Effect_Ss_Sibuki2.bin.yaz0
+file baserom/ovl_Effect_Ss_G_Magma2.bin.yaz0
+file baserom/ovl_Effect_Ss_Stone1.bin.yaz0
+file baserom/ovl_Effect_Ss_HitMark.bin.yaz0
+file baserom/ovl_Effect_Ss_Fhg_Flash.bin.yaz0
+file baserom/ovl_Effect_Ss_K_Fire.bin.yaz0
+file baserom/ovl_Effect_Ss_Solder_Srch_Ball.bin.yaz0
+file baserom/ovl_Effect_Ss_Kakera.bin.yaz0
+file baserom/ovl_Effect_Ss_Ice_Piece.bin.yaz0
+file baserom/ovl_Effect_Ss_En_Ice.bin.yaz0
+file baserom/ovl_Effect_Ss_Fire_Tail.bin.yaz0
+file baserom/ovl_Effect_Ss_En_Fire.bin.yaz0
+file baserom/ovl_Effect_Ss_Extra.bin.yaz0
+file baserom/ovl_Effect_Ss_Fcircle.bin.yaz0
+file baserom/ovl_Effect_Ss_Dead_Db.bin.yaz0
+file baserom/ovl_Effect_Ss_Dead_Dd.bin.yaz0
+file baserom/ovl_Effect_Ss_Dead_Ds.bin.yaz0
+file baserom/ovl_Effect_Ss_Dead_Sound.bin.yaz0
+file baserom/ovl_Oceff_Storm.bin.yaz0
+file baserom/ovl_En_Weiyer.bin.yaz0
+file baserom/ovl_Bg_Spot05_Soko.bin.yaz0
+file baserom/ovl_Bg_Jya_1flift.bin.yaz0
+file baserom/ovl_Bg_Jya_Haheniron.bin.yaz0
+file baserom/ovl_Bg_Spot12_Gate.bin.yaz0
+file baserom/ovl_Bg_Spot12_Saku.bin.yaz0
+file baserom/ovl_En_Hintnuts.bin.yaz0
+file baserom/ovl_En_Nutsball.bin.yaz0
+file baserom/ovl_Bg_Spot00_Break.bin.yaz0
+file baserom/ovl_En_Shopnuts.bin.yaz0
+file baserom/ovl_En_It.bin.yaz0
+file baserom/ovl_En_GeldB.bin.yaz0
+file baserom/ovl_Oceff_Wipe2.bin.yaz0
+file baserom/ovl_Oceff_Wipe3.bin.yaz0
+file baserom/ovl_En_Niw_Girl.bin.yaz0
+file baserom/ovl_En_Dog.bin.yaz0
+file baserom/ovl_En_Si.bin.yaz0
+file baserom/ovl_Bg_Spot01_Objects2.bin.yaz0
+file baserom/ovl_Obj_Comb.bin.yaz0
+file baserom/ovl_Bg_Spot11_Bakudankabe.bin.yaz0
+file baserom/ovl_Obj_Kibako2.bin.yaz0
+file baserom/ovl_En_Dnt_Demo.bin.yaz0
+file baserom/ovl_En_Dnt_Jiji.bin.yaz0
+file baserom/ovl_En_Dnt_Nomal.bin.yaz0
+file baserom/ovl_En_Guest.bin.yaz0
+file baserom/ovl_Bg_Bom_Guard.bin.yaz0
+file baserom/ovl_En_Hs2.bin.yaz0
+file baserom/ovl_Demo_Kekkai.bin.yaz0
+file baserom/ovl_Bg_Spot08_Bakudankabe.bin.yaz0
+file baserom/ovl_Bg_Spot17_Bakudankabe.bin.yaz0
+file baserom/ovl_Obj_Mure3.bin.yaz0
+file baserom/ovl_En_Tg.bin.yaz0
+file baserom/ovl_En_Mu.bin.yaz0
+file baserom/ovl_En_Go2.bin.yaz0
+file baserom/ovl_En_Wf.bin.yaz0
+file baserom/ovl_En_Skb.bin.yaz0
+file baserom/ovl_Demo_Gj.bin.yaz0
+file baserom/ovl_Demo_Geff.bin.yaz0
+file baserom/ovl_Bg_Gnd_Firemeiro.bin.yaz0
+file baserom/ovl_Bg_Gnd_Darkmeiro.bin.yaz0
+file baserom/ovl_Bg_Gnd_Soulmeiro.bin.yaz0
+file baserom/ovl_Bg_Gnd_Nisekabe.bin.yaz0
+file baserom/ovl_Bg_Gnd_Iceblock.bin.yaz0
+file baserom/ovl_Bg_Ydan_Sp.bin.yaz0
+file baserom/ovl_En_Gb.bin.yaz0
+file baserom/ovl_En_Gs.bin.yaz0
+file baserom/ovl_Bg_Mizu_Bwall.bin.yaz0
+file baserom/ovl_Bg_Mizu_Shutter.bin.yaz0
+file baserom/ovl_En_Daiku_Kakariko.bin.yaz0
+file baserom/ovl_Bg_Bowl_Wall.bin.yaz0
+file baserom/ovl_En_Wall_Tubo.bin.yaz0
+file baserom/ovl_En_Po_Desert.bin.yaz0
+file baserom/ovl_En_Crow.bin.yaz0
+file baserom/ovl_Door_Killer.bin.yaz0
+file baserom/ovl_Bg_Spot11_Oasis.bin.yaz0
+file baserom/ovl_Bg_Spot18_Futa.bin.yaz0
+file baserom/ovl_Bg_Spot18_Shutter.bin.yaz0
+file baserom/ovl_En_Ma3.bin.yaz0
+file baserom/ovl_En_Cow.bin.yaz0
+file baserom/ovl_Bg_Ice_Turara.bin.yaz0
+file baserom/ovl_Bg_Ice_Shutter.bin.yaz0
+file baserom/ovl_En_Kakasi2.bin.yaz0
+file baserom/ovl_En_Kakasi3.bin.yaz0
+file baserom/ovl_Oceff_Wipe4.bin.yaz0
+file baserom/ovl_En_Eg.bin.yaz0
+file baserom/ovl_Bg_Menkuri_Nisekabe.bin.yaz0
+file baserom/ovl_En_Zo.bin.yaz0
+file baserom/ovl_Effect_Ss_Ice_Smoke.bin.yaz0
+file baserom/ovl_Obj_Makekinsuta.bin.yaz0
+file baserom/ovl_En_Ge3.bin.yaz0
+file baserom/ovl_Obj_Timeblock.bin.yaz0
+file baserom/ovl_Obj_Hamishi.bin.yaz0
+file baserom/ovl_En_Zl4.bin.yaz0
+file baserom/ovl_En_Mm2.bin.yaz0
+file baserom/ovl_Bg_Jya_Block.bin.yaz0
+file baserom/ovl_Obj_Warp2block.bin.yaz0
+file baserom/gameplay_keep.bin.yaz0 align(0x1000)
+file baserom/gameplay_field_keep.bin.yaz0 align(0x1000)
+file baserom/gameplay_dangeon_keep.bin.yaz0 align(0x1000)
+file baserom/gameplay_object_exchange_static.bin.yaz0 align(0x1000)
+file baserom/object_link_boy.bin.yaz0 align(0x1000)
+file baserom/object_link_child.bin.yaz0 align(0x1000)
+file baserom/object_box.bin.yaz0 align(0x1000)
+file baserom/object_human.bin.yaz0 align(0x1000)
+file baserom/object_okuta.bin.yaz0 align(0x1000)
+file baserom/object_poh.bin.yaz0 align(0x1000)
+file baserom/object_wallmaster.bin.yaz0 align(0x1000)
+file baserom/object_dy_obj.bin.yaz0 align(0x1000)
+file baserom/object_firefly.bin.yaz0 align(0x1000)
+file baserom/object_dodongo.bin.yaz0 align(0x1000)
+file baserom/object_fire.bin.yaz0 align(0x1000)
+file baserom/object_niw.bin.yaz0 align(0x1000)
+file baserom/object_tite.bin.yaz0 align(0x1000)
+file baserom/object_reeba.bin.yaz0 align(0x1000)
+file baserom/object_peehat.bin.yaz0 align(0x1000)
+file baserom/object_kingdodongo.bin.yaz0 align(0x1000)
+file baserom/object_horse.bin.yaz0 align(0x1000)
+file baserom/object_zf.bin.yaz0 align(0x1000)
+file baserom/object_goma.bin.yaz0 align(0x1000)
+file baserom/object_zl1.bin.yaz0 align(0x1000)
+file baserom/object_gol.bin.yaz0 align(0x1000)
+file baserom/object_bubble.bin.yaz0 align(0x1000)
+file baserom/object_dodojr.bin.yaz0 align(0x1000)
+file baserom/object_torch2.bin.yaz0 align(0x1000)
+file baserom/object_bl.bin.yaz0 align(0x1000)
+file baserom/object_tp.bin.yaz0 align(0x1000)
+file baserom/object_oA1.bin.yaz0 align(0x1000)
+file baserom/object_st.bin.yaz0 align(0x1000)
+file baserom/object_bw.bin.yaz0 align(0x1000)
+file baserom/object_ei.bin.yaz0 align(0x1000)
+file baserom/object_horse_normal.bin.yaz0 align(0x1000)
+file baserom/object_oB1.bin.yaz0 align(0x1000)
+file baserom/object_o_anime.bin.yaz0 align(0x1000)
+file baserom/object_spot04_objects.bin.yaz0 align(0x1000)
+file baserom/object_ddan_objects.bin.yaz0 align(0x1000)
+file baserom/object_hidan_objects.bin.yaz0 align(0x1000)
+file baserom/object_horse_ganon.bin.yaz0 align(0x1000)
+file baserom/object_oA2.bin.yaz0 align(0x1000)
+file baserom/object_spot00_objects.bin.yaz0 align(0x1000)
+file baserom/object_mb.bin.yaz0 align(0x1000)
+file baserom/object_bombf.bin.yaz0 align(0x1000)
+file baserom/object_sk2.bin.yaz0 align(0x1000)
+file baserom/object_oE1.bin.yaz0 align(0x1000)
+file baserom/object_oE_anime.bin.yaz0 align(0x1000)
+file baserom/object_oE2.bin.yaz0 align(0x1000)
+file baserom/object_ydan_objects.bin.yaz0 align(0x1000)
+file baserom/object_gnd.bin.yaz0 align(0x1000)
+file baserom/object_am.bin.yaz0 align(0x1000)
+file baserom/object_dekubaba.bin.yaz0 align(0x1000)
+file baserom/object_oA3.bin.yaz0 align(0x1000)
+file baserom/object_oA4.bin.yaz0 align(0x1000)
+file baserom/object_oA5.bin.yaz0 align(0x1000)
+file baserom/object_oA6.bin.yaz0 align(0x1000)
+file baserom/object_oA7.bin.yaz0 align(0x1000)
+file baserom/object_jj.bin.yaz0 align(0x1000)
+file baserom/object_oA8.bin.yaz0 align(0x1000)
+file baserom/object_oA9.bin.yaz0 align(0x1000)
+file baserom/object_oB2.bin.yaz0 align(0x1000)
+file baserom/object_oB3.bin.yaz0 align(0x1000)
+file baserom/object_oB4.bin.yaz0 align(0x1000)
+file baserom/object_horse_zelda.bin.yaz0 align(0x1000)
+file baserom/object_opening_demo1.bin.yaz0 align(0x1000)
+file baserom/object_warp1.bin.yaz0 align(0x1000)
+file baserom/object_b_heart.bin.yaz0 align(0x1000)
+file baserom/object_dekunuts.bin.yaz0 align(0x1000)
+file baserom/object_oE3.bin.yaz0 align(0x1000)
+file baserom/object_oE4.bin.yaz0 align(0x1000)
+file baserom/object_menkuri_objects.bin.yaz0 align(0x1000)
+file baserom/object_oE5.bin.yaz0 align(0x1000)
+file baserom/object_oE6.bin.yaz0 align(0x1000)
+file baserom/object_oE7.bin.yaz0 align(0x1000)
+file baserom/object_oE8.bin.yaz0 align(0x1000)
+file baserom/object_oE9.bin.yaz0 align(0x1000)
+file baserom/object_oE10.bin.yaz0 align(0x1000)
+file baserom/object_oE11.bin.yaz0 align(0x1000)
+file baserom/object_oE12.bin.yaz0 align(0x1000)
+file baserom/object_vali.bin.yaz0 align(0x1000)
+file baserom/object_oA10.bin.yaz0 align(0x1000)
+file baserom/object_oA11.bin.yaz0 align(0x1000)
+file baserom/object_mizu_objects.bin.yaz0 align(0x1000)
+file baserom/object_fhg.bin.yaz0 align(0x1000)
+file baserom/object_ossan.bin.yaz0 align(0x1000)
+file baserom/object_mori_hineri1.bin.yaz0 align(0x1000)
+file baserom/object_Bb.bin.yaz0 align(0x1000)
+file baserom/object_toki_objects.bin.yaz0 align(0x1000)
+file baserom/object_yukabyun.bin.yaz0 align(0x1000)
+file baserom/object_zl2.bin.yaz0 align(0x1000)
+file baserom/object_mjin.bin.yaz0 align(0x1000)
+file baserom/object_mjin_flash.bin.yaz0 align(0x1000)
+file baserom/object_mjin_dark.bin.yaz0 align(0x1000)
+file baserom/object_mjin_flame.bin.yaz0 align(0x1000)
+file baserom/object_mjin_ice.bin.yaz0 align(0x1000)
+file baserom/object_mjin_soul.bin.yaz0 align(0x1000)
+file baserom/object_mjin_wind.bin.yaz0 align(0x1000)
+file baserom/object_mjin_oka.bin.yaz0 align(0x1000)
+file baserom/object_haka_objects.bin.yaz0 align(0x1000)
+file baserom/object_spot06_objects.bin.yaz0 align(0x1000)
+file baserom/object_ice_objects.bin.yaz0 align(0x1000)
+file baserom/object_relay_objects.bin.yaz0 align(0x1000)
+file baserom/object_mori_hineri1a.bin.yaz0 align(0x1000)
+file baserom/object_mori_hineri2.bin.yaz0 align(0x1000)
+file baserom/object_mori_hineri2a.bin.yaz0 align(0x1000)
+file baserom/object_mori_objects.bin.yaz0 align(0x1000)
+file baserom/object_mori_tex.bin.yaz0 align(0x1000)
+file baserom/object_spot08_obj.bin.yaz0 align(0x1000)
+file baserom/object_warp2.bin.yaz0 align(0x1000)
+file baserom/object_hata.bin.yaz0 align(0x1000)
+file baserom/object_bird.bin.yaz0 align(0x1000)
+file baserom/object_wood02.bin.yaz0 align(0x1000)
+file baserom/object_lightbox.bin.yaz0 align(0x1000)
+file baserom/object_pu_box.bin.yaz0 align(0x1000)
+file baserom/object_trap.bin.yaz0 align(0x1000)
+file baserom/object_vase.bin.yaz0 align(0x1000)
+file baserom/object_im.bin.yaz0 align(0x1000)
+file baserom/object_ta.bin.yaz0 align(0x1000)
+file baserom/object_tk.bin.yaz0 align(0x1000)
+file baserom/object_xc.bin.yaz0 align(0x1000)
+file baserom/object_vm.bin.yaz0 align(0x1000)
+file baserom/object_bv.bin.yaz0 align(0x1000)
+file baserom/object_hakach_objects.bin.yaz0 align(0x1000)
+file baserom/object_efc_crystal_light.bin.yaz0 align(0x1000)
+file baserom/object_efc_fire_ball.bin.yaz0 align(0x1000)
+file baserom/object_efc_flash.bin.yaz0 align(0x1000)
+file baserom/object_efc_lgt_shower.bin.yaz0 align(0x1000)
+file baserom/object_efc_star_field.bin.yaz0 align(0x1000)
+file baserom/object_god_lgt.bin.yaz0 align(0x1000)
+file baserom/object_light_ring.bin.yaz0 align(0x1000)
+file baserom/object_triforce_spot.bin.yaz0 align(0x1000)
+file baserom/object_medal.bin.yaz0 align(0x1000)
+file baserom/object_bdan_objects.bin.yaz0 align(0x1000)
+file baserom/object_sd.bin.yaz0 align(0x1000)
+file baserom/object_rd.bin.yaz0 align(0x1000)
+file baserom/object_po_sisters.bin.yaz0 align(0x1000)
+file baserom/object_heavy_object.bin.yaz0 align(0x1000)
+file baserom/object_gndd.bin.yaz0 align(0x1000)
+file baserom/object_fd.bin.yaz0 align(0x1000)
+file baserom/object_du.bin.yaz0 align(0x1000)
+file baserom/object_fw.bin.yaz0 align(0x1000)
+file baserom/object_horse_link_child.bin.yaz0 align(0x1000)
+file baserom/object_spot02_objects.bin.yaz0 align(0x1000)
+file baserom/object_haka.bin.yaz0 align(0x1000)
+file baserom/object_ru1.bin.yaz0 align(0x1000)
+file baserom/object_syokudai.bin.yaz0 align(0x1000)
+file baserom/object_fd2.bin.yaz0 align(0x1000)
+file baserom/object_dh.bin.yaz0 align(0x1000)
+file baserom/object_rl.bin.yaz0 align(0x1000)
+file baserom/object_efc_tw.bin.yaz0 align(0x1000)
+file baserom/object_demo_tre_lgt.bin.yaz0 align(0x1000)
+file baserom/object_gi_key.bin.yaz0 align(0x1000)
+file baserom/object_mir_ray.bin.yaz0 align(0x1000)
+file baserom/object_brob.bin.yaz0 align(0x1000)
+file baserom/object_gi_jewel.bin.yaz0 align(0x1000)
+file baserom/object_spot09_obj.bin.yaz0 align(0x1000)
+file baserom/object_spot18_obj.bin.yaz0 align(0x1000)
+file baserom/object_bdoor.bin.yaz0 align(0x1000)
+file baserom/object_spot17_obj.bin.yaz0 align(0x1000)
+file baserom/object_shop_dungen.bin.yaz0 align(0x1000)
+file baserom/object_nb.bin.yaz0 align(0x1000)
+file baserom/object_mo.bin.yaz0 align(0x1000)
+file baserom/object_sb.bin.yaz0 align(0x1000)
+file baserom/object_gi_melody.bin.yaz0 align(0x1000)
+file baserom/object_gi_heart.bin.yaz0 align(0x1000)
+file baserom/object_gi_compass.bin.yaz0 align(0x1000)
+file baserom/object_gi_bosskey.bin.yaz0 align(0x1000)
+file baserom/object_gi_medal.bin.yaz0 align(0x1000)
+file baserom/object_gi_nuts.bin.yaz0 align(0x1000)
+file baserom/object_sa.bin.yaz0 align(0x1000)
+file baserom/object_gi_hearts.bin.yaz0 align(0x1000)
+file baserom/object_gi_arrowcase.bin.yaz0 align(0x1000)
+file baserom/object_gi_bombpouch.bin.yaz0 align(0x1000)
+file baserom/object_in.bin.yaz0 align(0x1000)
+file baserom/object_tr.bin.yaz0 align(0x1000)
+file baserom/object_spot16_obj.bin.yaz0 align(0x1000)
+file baserom/object_oE1s.bin.yaz0 align(0x1000)
+file baserom/object_oE4s.bin.yaz0 align(0x1000)
+file baserom/object_os_anime.bin.yaz0 align(0x1000)
+file baserom/object_gi_bottle.bin.yaz0 align(0x1000)
+file baserom/object_gi_stick.bin.yaz0 align(0x1000)
+file baserom/object_gi_map.bin.yaz0 align(0x1000)
+file baserom/object_oF1d_map.bin.yaz0 align(0x1000)
+file baserom/object_ru2.bin.yaz0 align(0x1000)
+file baserom/object_gi_shield_1.bin.yaz0 align(0x1000)
+file baserom/object_dekujr.bin.yaz0 align(0x1000)
+file baserom/object_gi_magicpot.bin.yaz0 align(0x1000)
+file baserom/object_gi_bomb_1.bin.yaz0 align(0x1000)
+file baserom/object_oF1s.bin.yaz0 align(0x1000)
+file baserom/object_ma2.bin.yaz0 align(0x1000)
+file baserom/object_gi_purse.bin.yaz0 align(0x1000)
+file baserom/object_hni.bin.yaz0 align(0x1000)
+file baserom/object_tw.bin.yaz0 align(0x1000)
+file baserom/object_rr.bin.yaz0 align(0x1000)
+file baserom/object_bxa.bin.yaz0 align(0x1000)
+file baserom/object_anubice.bin.yaz0 align(0x1000)
+file baserom/object_gi_gerudo.bin.yaz0 align(0x1000)
+file baserom/object_gi_arrow.bin.yaz0 align(0x1000)
+file baserom/object_gi_bomb_2.bin.yaz0 align(0x1000)
+file baserom/object_gi_egg.bin.yaz0 align(0x1000)
+file baserom/object_gi_scale.bin.yaz0 align(0x1000)
+file baserom/object_gi_shield_2.bin.yaz0 align(0x1000)
+file baserom/object_gi_hookshot.bin.yaz0 align(0x1000)
+file baserom/object_gi_ocarina.bin.yaz0 align(0x1000)
+file baserom/object_gi_milk.bin.yaz0 align(0x1000)
+file baserom/object_ma1.bin.yaz0 align(0x1000)
+file baserom/object_ganon.bin.yaz0 align(0x1000)
+file baserom/object_sst.bin.yaz0 align(0x1000)
+file baserom/object_ny.bin.yaz0 align(0x1000)
+file baserom/object_fr.bin.yaz0 align(0x1000)
+file baserom/object_gi_pachinko.bin.yaz0 align(0x1000)
+file baserom/object_gi_boomerang.bin.yaz0 align(0x1000)
+file baserom/object_gi_bow.bin.yaz0 align(0x1000)
+file baserom/object_gi_glasses.bin.yaz0 align(0x1000)
+file baserom/object_gi_liquid.bin.yaz0 align(0x1000)
+file baserom/object_ani.bin.yaz0 align(0x1000)
+file baserom/object_demo_6k.bin.yaz0 align(0x1000)
+file baserom/object_gi_shield_3.bin.yaz0 align(0x1000)
+file baserom/object_gi_letter.bin.yaz0 align(0x1000)
+file baserom/object_spot15_obj.bin.yaz0 align(0x1000)
+file baserom/object_jya_obj.bin.yaz0 align(0x1000)
+file baserom/object_gi_clothes.bin.yaz0 align(0x1000)
+file baserom/object_gi_bean.bin.yaz0 align(0x1000)
+file baserom/object_gi_fish.bin.yaz0 align(0x1000)
+file baserom/object_gi_saw.bin.yaz0 align(0x1000)
+file baserom/object_gi_hammer.bin.yaz0 align(0x1000)
+file baserom/object_gi_grass.bin.yaz0 align(0x1000)
+file baserom/object_gi_longsword.bin.yaz0 align(0x1000)
+file baserom/object_spot01_objects.bin.yaz0 align(0x1000)
+file baserom/object_md.bin.yaz0 align(0x1000)
+file baserom/object_km1.bin.yaz0 align(0x1000)
+file baserom/object_kw1.bin.yaz0 align(0x1000)
+file baserom/object_zo.bin.yaz0 align(0x1000)
+file baserom/object_kz.bin.yaz0 align(0x1000)
+file baserom/object_umajump.bin.yaz0 align(0x1000)
+file baserom/object_masterkokiri.bin.yaz0 align(0x1000)
+file baserom/object_masterkokirihead.bin.yaz0 align(0x1000)
+file baserom/object_mastergolon.bin.yaz0 align(0x1000)
+file baserom/object_masterzoora.bin.yaz0 align(0x1000)
+file baserom/object_aob.bin.yaz0 align(0x1000)
+file baserom/object_ik.bin.yaz0 align(0x1000)
+file baserom/object_ahg.bin.yaz0 align(0x1000)
+file baserom/object_cne.bin.yaz0 align(0x1000)
+file baserom/object_gi_niwatori.bin.yaz0 align(0x1000)
+file baserom/object_skj.bin.yaz0 align(0x1000)
+file baserom/object_gi_bottle_letter.bin.yaz0 align(0x1000)
+file baserom/object_bji.bin.yaz0 align(0x1000)
+file baserom/object_bba.bin.yaz0 align(0x1000)
+file baserom/object_gi_ocarina_0.bin.yaz0 align(0x1000)
+file baserom/object_ds.bin.yaz0 align(0x1000)
+file baserom/object_ane.bin.yaz0 align(0x1000)
+file baserom/object_boj.bin.yaz0 align(0x1000)
+file baserom/object_spot03_object.bin.yaz0 align(0x1000)
+file baserom/object_spot07_object.bin.yaz0 align(0x1000)
+file baserom/object_fz.bin.yaz0 align(0x1000)
+file baserom/object_bob.bin.yaz0 align(0x1000)
+file baserom/object_ge1.bin.yaz0 align(0x1000)
+file baserom/object_yabusame_point.bin.yaz0 align(0x1000)
+file baserom/object_gi_boots_2.bin.yaz0 align(0x1000)
+file baserom/object_gi_seed.bin.yaz0 align(0x1000)
+file baserom/object_gnd_magic.bin.yaz0 align(0x1000)
+file baserom/object_d_elevator.bin.yaz0 align(0x1000)
+file baserom/object_d_hsblock.bin.yaz0 align(0x1000)
+file baserom/object_d_lift.bin.yaz0 align(0x1000)
+file baserom/object_mamenoki.bin.yaz0 align(0x1000)
+file baserom/object_goroiwa.bin.yaz0 align(0x1000)
+file baserom/object_toryo.bin.yaz0 align(0x1000)
+file baserom/object_daiku.bin.yaz0 align(0x1000)
+file baserom/object_nwc.bin.yaz0 align(0x1000)
+file baserom/object_blkobj.bin.yaz0 align(0x1000)
+file baserom/object_gm.bin.yaz0 align(0x1000)
+file baserom/object_ms.bin.yaz0 align(0x1000)
+file baserom/object_hs.bin.yaz0 align(0x1000)
+file baserom/object_ingate.bin.yaz0 align(0x1000)
+file baserom/object_lightswitch.bin.yaz0 align(0x1000)
+file baserom/object_kusa.bin.yaz0 align(0x1000)
+file baserom/object_tsubo.bin.yaz0 align(0x1000)
+file baserom/object_gi_gloves.bin.yaz0 align(0x1000)
+file baserom/object_gi_coin.bin.yaz0 align(0x1000)
+file baserom/object_kanban.bin.yaz0 align(0x1000)
+file baserom/object_gjyo_objects.bin.yaz0 align(0x1000)
+file baserom/object_owl.bin.yaz0 align(0x1000)
+file baserom/object_mk.bin.yaz0 align(0x1000)
+file baserom/object_fu.bin.yaz0 align(0x1000)
+file baserom/object_gi_ki_tan_mask.bin.yaz0 align(0x1000)
+file baserom/object_gi_redead_mask.bin.yaz0 align(0x1000)
+file baserom/object_gi_skj_mask.bin.yaz0 align(0x1000)
+file baserom/object_gi_rabit_mask.bin.yaz0 align(0x1000)
+file baserom/object_gi_truth_mask.bin.yaz0 align(0x1000)
+file baserom/object_ganon_objects.bin.yaz0 align(0x1000)
+file baserom/object_siofuki.bin.yaz0 align(0x1000)
+file baserom/object_stream.bin.yaz0 align(0x1000)
+file baserom/object_mm.bin.yaz0 align(0x1000)
+file baserom/object_fa.bin.yaz0 align(0x1000)
+file baserom/object_os.bin.yaz0 align(0x1000)
+file baserom/object_gi_eye_lotion.bin.yaz0 align(0x1000)
+file baserom/object_gi_powder.bin.yaz0 align(0x1000)
+file baserom/object_gi_mushroom.bin.yaz0 align(0x1000)
+file baserom/object_gi_ticketstone.bin.yaz0 align(0x1000)
+file baserom/object_gi_brokensword.bin.yaz0 align(0x1000)
+file baserom/object_js.bin.yaz0 align(0x1000)
+file baserom/object_cs.bin.yaz0 align(0x1000)
+file baserom/object_gi_prescription.bin.yaz0 align(0x1000)
+file baserom/object_gi_bracelet.bin.yaz0 align(0x1000)
+file baserom/object_gi_soldout.bin.yaz0 align(0x1000)
+file baserom/object_gi_frog.bin.yaz0 align(0x1000)
+file baserom/object_mag.bin.yaz0 align(0x1000)
+file baserom/object_door_gerudo.bin.yaz0 align(0x1000)
+file baserom/object_gt.bin.yaz0 align(0x1000)
+file baserom/object_efc_erupc.bin.yaz0 align(0x1000)
+file baserom/object_zl2_anime1.bin.yaz0 align(0x1000)
+file baserom/object_zl2_anime2.bin.yaz0 align(0x1000)
+file baserom/object_gi_golonmask.bin.yaz0 align(0x1000)
+file baserom/object_gi_zoramask.bin.yaz0 align(0x1000)
+file baserom/object_gi_gerudomask.bin.yaz0 align(0x1000)
+file baserom/object_ganon2.bin.yaz0 align(0x1000)
+file baserom/object_ka.bin.yaz0 align(0x1000)
+file baserom/object_ts.bin.yaz0 align(0x1000)
+file baserom/object_zg.bin.yaz0 align(0x1000)
+file baserom/object_gi_hoverboots.bin.yaz0 align(0x1000)
+file baserom/object_gi_m_arrow.bin.yaz0 align(0x1000)
+file baserom/object_ds2.bin.yaz0 align(0x1000)
+file baserom/object_ec.bin.yaz0 align(0x1000)
+file baserom/object_fish.bin.yaz0 align(0x1000)
+file baserom/object_gi_sutaru.bin.yaz0 align(0x1000)
+file baserom/object_gi_goddess.bin.yaz0 align(0x1000)
+file baserom/object_ssh.bin.yaz0 align(0x1000)
+file baserom/object_bigokuta.bin.yaz0 align(0x1000)
+file baserom/object_bg.bin.yaz0 align(0x1000)
+file baserom/object_spot05_objects.bin.yaz0 align(0x1000)
+file baserom/object_spot12_obj.bin.yaz0 align(0x1000)
+file baserom/object_bombiwa.bin.yaz0 align(0x1000)
+file baserom/object_hintnuts.bin.yaz0 align(0x1000)
+file baserom/object_rs.bin.yaz0 align(0x1000)
+file baserom/object_spot00_break.bin.yaz0 align(0x1000)
+file baserom/object_gla.bin.yaz0 align(0x1000)
+file baserom/object_shopnuts.bin.yaz0 align(0x1000)
+file baserom/object_geldb.bin.yaz0 align(0x1000)
+file baserom/object_gr.bin.yaz0 align(0x1000)
+file baserom/object_dog.bin.yaz0 align(0x1000)
+file baserom/object_jya_iron.bin.yaz0 align(0x1000)
+file baserom/object_jya_door.bin.yaz0 align(0x1000)
+file baserom/object_spot01_objects2.bin.yaz0 align(0x1000)
+file baserom/object_spot11_obj.bin.yaz0 align(0x1000)
+file baserom/object_kibako2.bin.yaz0 align(0x1000)
+file baserom/object_dns.bin.yaz0 align(0x1000)
+file baserom/object_dnk.bin.yaz0 align(0x1000)
+file baserom/object_gi_fire.bin.yaz0 align(0x1000)
+file baserom/object_gi_insect.bin.yaz0 align(0x1000)
+file baserom/object_gi_butterfly.bin.yaz0 align(0x1000)
+file baserom/object_gi_ghost.bin.yaz0 align(0x1000)
+file baserom/object_gi_soul.bin.yaz0 align(0x1000)
+file baserom/object_bowl.bin.yaz0 align(0x1000)
+file baserom/object_po_field.bin.yaz0 align(0x1000)
+file baserom/object_demo_kekkai.bin.yaz0 align(0x1000)
+file baserom/object_efc_doughnut.bin.yaz0 align(0x1000)
+file baserom/object_gi_dekupouch.bin.yaz0 align(0x1000)
+file baserom/object_ganon_anime1.bin.yaz0 align(0x1000)
+file baserom/object_ganon_anime2.bin.yaz0 align(0x1000)
+file baserom/object_ganon_anime3.bin.yaz0 align(0x1000)
+file baserom/object_gi_rupy.bin.yaz0 align(0x1000)
+file baserom/object_spot01_matoya.bin.yaz0 align(0x1000)
+file baserom/object_spot01_matoyab.bin.yaz0 align(0x1000)
+file baserom/object_po_composer.bin.yaz0 align(0x1000)
+file baserom/object_mu.bin.yaz0 align(0x1000)
+file baserom/object_wf.bin.yaz0 align(0x1000)
+file baserom/object_skb.bin.yaz0 align(0x1000)
+file baserom/object_gj.bin.yaz0 align(0x1000)
+file baserom/object_geff.bin.yaz0 align(0x1000)
+file baserom/object_haka_door.bin.yaz0 align(0x1000)
+file baserom/object_gs.bin.yaz0 align(0x1000)
+file baserom/object_ps.bin.yaz0 align(0x1000)
+file baserom/object_bwall.bin.yaz0 align(0x1000)
+file baserom/object_crow.bin.yaz0 align(0x1000)
+file baserom/object_cow.bin.yaz0 align(0x1000)
+file baserom/object_cob.bin.yaz0 align(0x1000)
+file baserom/object_gi_sword_1.bin.yaz0 align(0x1000)
+file baserom/object_door_killer.bin.yaz0 align(0x1000)
+file baserom/object_ouke_haka.bin.yaz0 align(0x1000)
+file baserom/object_timeblock.bin.yaz0 align(0x1000)
+file baserom/object_zl4.bin.yaz0 align(0x1000)
+file baserom/g_pn_01.bin.yaz0 align(0x1000)
+file baserom/g_pn_02.bin.yaz0 align(0x1000)
+file baserom/g_pn_03.bin.yaz0 align(0x1000)
+file baserom/g_pn_04.bin.yaz0 align(0x1000)
+file baserom/g_pn_05.bin.yaz0 align(0x1000)
+file baserom/g_pn_06.bin.yaz0 align(0x1000)
+file baserom/g_pn_07.bin.yaz0 align(0x1000)
+file baserom/g_pn_08.bin.yaz0 align(0x1000)
+file baserom/g_pn_09.bin.yaz0 align(0x1000)
+file baserom/g_pn_10.bin.yaz0 align(0x1000)
+file baserom/g_pn_11.bin.yaz0 align(0x1000)
+file baserom/g_pn_12.bin.yaz0 align(0x1000)
+file baserom/g_pn_13.bin.yaz0 align(0x1000)
+file baserom/g_pn_14.bin.yaz0 align(0x1000)
+file baserom/g_pn_15.bin.yaz0 align(0x1000)
+file baserom/g_pn_16.bin.yaz0 align(0x1000)
+file baserom/g_pn_17.bin.yaz0 align(0x1000)
+file baserom/g_pn_18.bin.yaz0 align(0x1000)
+file baserom/g_pn_19.bin.yaz0 align(0x1000)
+file baserom/g_pn_20.bin.yaz0 align(0x1000)
+file baserom/g_pn_21.bin.yaz0 align(0x1000)
+file baserom/g_pn_22.bin.yaz0 align(0x1000)
+file baserom/g_pn_23.bin.yaz0 align(0x1000)
+file baserom/g_pn_24.bin.yaz0 align(0x1000)
+file baserom/g_pn_25.bin.yaz0 align(0x1000)
+file baserom/g_pn_26.bin.yaz0 align(0x1000)
+file baserom/g_pn_27.bin.yaz0 align(0x1000)
+file baserom/g_pn_28.bin.yaz0 align(0x1000)
+file baserom/g_pn_29.bin.yaz0 align(0x1000)
+file baserom/g_pn_30.bin.yaz0 align(0x1000)
+file baserom/g_pn_31.bin.yaz0 align(0x1000)
+file baserom/g_pn_32.bin.yaz0 align(0x1000)
+file baserom/g_pn_33.bin.yaz0 align(0x1000)
+file baserom/g_pn_34.bin.yaz0 align(0x1000)
+file baserom/g_pn_35.bin.yaz0 align(0x1000)
+file baserom/g_pn_36.bin.yaz0 align(0x1000)
+file baserom/g_pn_37.bin.yaz0 align(0x1000)
+file baserom/g_pn_38.bin.yaz0 align(0x1000)
+file baserom/g_pn_39.bin.yaz0 align(0x1000)
+file baserom/g_pn_40.bin.yaz0 align(0x1000)
+file baserom/g_pn_41.bin.yaz0 align(0x1000)
+file baserom/g_pn_42.bin.yaz0 align(0x1000)
+file baserom/g_pn_43.bin.yaz0 align(0x1000)
+file baserom/g_pn_44.bin.yaz0 align(0x1000)
+file baserom/g_pn_45.bin.yaz0 align(0x1000)
+file baserom/g_pn_46.bin.yaz0 align(0x1000)
+file baserom/g_pn_47.bin.yaz0 align(0x1000)
+file baserom/g_pn_48.bin.yaz0 align(0x1000)
+file baserom/g_pn_49.bin.yaz0 align(0x1000)
+file baserom/g_pn_50.bin.yaz0 align(0x1000)
+file baserom/g_pn_51.bin.yaz0 align(0x1000)
+file baserom/g_pn_52.bin.yaz0 align(0x1000)
+file baserom/g_pn_53.bin.yaz0 align(0x1000)
+file baserom/g_pn_54.bin.yaz0 align(0x1000)
+file baserom/g_pn_55.bin.yaz0 align(0x1000)
+file baserom/g_pn_56.bin.yaz0 align(0x1000)
+file baserom/g_pn_57.bin.yaz0 align(0x1000)
+file baserom/z_select_static.bin.yaz0 align(0x1000)
+file baserom/nintendo_rogo_static.bin.yaz0 align(0x1000)
+file baserom/title_static.bin.yaz0 align(0x1000)
+file baserom/parameter_static.bin.yaz0 align(0x1000)
+file baserom/vr_fine0_static.bin.yaz0 align(0x1000)
+file baserom/vr_fine0_pal_static.bin align(0x1000)
+file baserom/vr_fine1_static.bin.yaz0 align(0x1000)
+file baserom/vr_fine1_pal_static.bin align(0x1000)
+file baserom/vr_fine2_static.bin.yaz0 align(0x1000)
+file baserom/vr_fine2_pal_static.bin align(0x1000)
+file baserom/vr_fine3_static.bin.yaz0 align(0x1000)
+file baserom/vr_fine3_pal_static.bin align(0x1000)
+file baserom/vr_cloud0_static.bin.yaz0 align(0x1000)
+file baserom/vr_cloud0_pal_static.bin align(0x1000)
+file baserom/vr_cloud1_static.bin.yaz0 align(0x1000)
+file baserom/vr_cloud1_pal_static.bin align(0x1000)
+file baserom/vr_cloud2_static.bin.yaz0 align(0x1000)
+file baserom/vr_cloud2_pal_static.bin align(0x1000)
+file baserom/vr_cloud3_static.bin.yaz0 align(0x1000)
+file baserom/vr_cloud3_pal_static.bin align(0x1000)
+file baserom/vr_holy0_static.bin.yaz0 align(0x1000)
+file baserom/vr_holy0_pal_static.bin align(0x1000)
+file baserom/vr_holy1_static.bin.yaz0 align(0x1000)
+file baserom/vr_holy1_pal_static.bin align(0x1000)
+file baserom/vr_MDVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_MDVR_pal_static.bin align(0x1000)
+file baserom/vr_MNVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_MNVR_pal_static.bin align(0x1000)
+file baserom/vr_RUVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_RUVR_pal_static.bin align(0x1000)
+file baserom/vr_LHVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_LHVR_pal_static.bin align(0x1000)
+file baserom/vr_KHVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_KHVR_pal_static.bin align(0x1000)
+file baserom/vr_K3VR_static.bin.yaz0 align(0x1000)
+file baserom/vr_K3VR_pal_static.bin align(0x1000)
+file baserom/vr_K4VR_static.bin.yaz0 align(0x1000)
+file baserom/vr_K4VR_pal_static.bin align(0x1000)
+file baserom/vr_K5VR_static.bin.yaz0 align(0x1000)
+file baserom/vr_K5VR_pal_static.bin align(0x1000)
+file baserom/vr_SP1a_static.bin.yaz0 align(0x1000)
+file baserom/vr_SP1a_pal_static.bin align(0x1000)
+file baserom/vr_MLVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_MLVR_pal_static.bin align(0x1000)
+file baserom/vr_KKRVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_KKRVR_pal_static.bin align(0x1000)
+file baserom/vr_KR3VR_static.bin.yaz0 align(0x1000)
+file baserom/vr_KR3VR_pal_static.bin align(0x1000)
+file baserom/vr_IPVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_IPVR_pal_static.bin align(0x1000)
+file baserom/vr_KSVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_KSVR_pal_static.bin align(0x1000)
+file baserom/vr_GLVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_GLVR_pal_static.bin align(0x1000)
+file baserom/vr_ZRVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_ZRVR_pal_static.bin align(0x1000)
+file baserom/vr_DGVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_DGVR_pal_static.bin align(0x1000)
+file baserom/vr_ALVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_ALVR_pal_static.bin align(0x1000)
+file baserom/vr_NSVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_NSVR_pal_static.bin align(0x1000)
+file baserom/vr_LBVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_LBVR_pal_static.bin align(0x1000)
+file baserom/vr_TTVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_TTVR_pal_static.bin align(0x1000)
+file baserom/vr_FCVR_static.bin.yaz0 align(0x1000)
+file baserom/vr_FCVR_pal_static.bin align(0x1000)
+file baserom/elf_message_field.bin.yaz0 align(0x1000)
+file baserom/elf_message_ydan.bin.yaz0 align(0x1000)
+file baserom/ddan_scene.bin.yaz0 align(0x1000)
+file baserom/ddan_room_0.bin.yaz0 align(0x1000)
+file baserom/ddan_room_1.bin.yaz0 align(0x1000)
+file baserom/ddan_room_2.bin.yaz0 align(0x1000)
+file baserom/ddan_room_3.bin.yaz0 align(0x1000)
+file baserom/ddan_room_4.bin.yaz0 align(0x1000)
+file baserom/ddan_room_5.bin.yaz0 align(0x1000)
+file baserom/ddan_room_6.bin.yaz0 align(0x1000)
+file baserom/ddan_room_7.bin.yaz0 align(0x1000)
+file baserom/ddan_room_8.bin.yaz0 align(0x1000)
+file baserom/ddan_room_9.bin.yaz0 align(0x1000)
+file baserom/ddan_room_10.bin.yaz0 align(0x1000)
+file baserom/ddan_room_11.bin.yaz0 align(0x1000)
+file baserom/ddan_room_12.bin.yaz0 align(0x1000)
+file baserom/ddan_room_13.bin.yaz0 align(0x1000)
+file baserom/ddan_room_14.bin.yaz0 align(0x1000)
+file baserom/ddan_room_15.bin.yaz0 align(0x1000)
+file baserom/ddan_room_16.bin.yaz0 align(0x1000)
+file baserom/spot00_scene.bin.yaz0 align(0x1000)
+file baserom/spot00_room_0.bin.yaz0 align(0x1000)
+file baserom/spot01_scene.bin.yaz0 align(0x1000)
+file baserom/spot01_room_0.bin.yaz0 align(0x1000)
+file baserom/spot02_scene.bin.yaz0 align(0x1000)
+file baserom/spot02_room_0.bin.yaz0 align(0x1000)
+file baserom/spot02_room_1.bin.yaz0 align(0x1000)
+file baserom/spot03_scene.bin.yaz0 align(0x1000)
+file baserom/spot03_room_0.bin.yaz0 align(0x1000)
+file baserom/spot03_room_1.bin.yaz0 align(0x1000)
+file baserom/spot04_scene.bin.yaz0 align(0x1000)
+file baserom/spot04_room_0.bin.yaz0 align(0x1000)
+file baserom/spot04_room_1.bin.yaz0 align(0x1000)
+file baserom/spot04_room_2.bin.yaz0 align(0x1000)
+file baserom/spot05_scene.bin.yaz0 align(0x1000)
+file baserom/spot05_room_0.bin.yaz0 align(0x1000)
+file baserom/spot06_scene.bin.yaz0 align(0x1000)
+file baserom/spot06_room_0.bin.yaz0 align(0x1000)
+file baserom/spot07_scene.bin.yaz0 align(0x1000)
+file baserom/spot07_room_0.bin.yaz0 align(0x1000)
+file baserom/spot07_room_1.bin.yaz0 align(0x1000)
+file baserom/spot08_scene.bin.yaz0 align(0x1000)
+file baserom/spot08_room_0.bin.yaz0 align(0x1000)
+file baserom/spot09_scene.bin.yaz0 align(0x1000)
+file baserom/spot09_room_0.bin.yaz0 align(0x1000)
+file baserom/spot10_scene.bin.yaz0 align(0x1000)
+file baserom/spot10_room_0.bin.yaz0 align(0x1000)
+file baserom/spot10_room_1.bin.yaz0 align(0x1000)
+file baserom/spot10_room_2.bin.yaz0 align(0x1000)
+file baserom/spot10_room_3.bin.yaz0 align(0x1000)
+file baserom/spot10_room_4.bin.yaz0 align(0x1000)
+file baserom/spot10_room_5.bin.yaz0 align(0x1000)
+file baserom/spot10_room_6.bin.yaz0 align(0x1000)
+file baserom/spot10_room_7.bin.yaz0 align(0x1000)
+file baserom/spot10_room_8.bin.yaz0 align(0x1000)
+file baserom/spot10_room_9.bin.yaz0 align(0x1000)
+file baserom/spot11_scene.bin.yaz0 align(0x1000)
+file baserom/spot11_room_0.bin.yaz0 align(0x1000)
+file baserom/spot12_scene.bin.yaz0 align(0x1000)
+file baserom/spot12_room_0.bin.yaz0 align(0x1000)
+file baserom/spot12_room_1.bin.yaz0 align(0x1000)
+file baserom/spot13_scene.bin.yaz0 align(0x1000)
+file baserom/spot13_room_0.bin.yaz0 align(0x1000)
+file baserom/spot13_room_1.bin.yaz0 align(0x1000)
+file baserom/spot15_scene.bin.yaz0 align(0x1000)
+file baserom/spot15_room_0.bin.yaz0 align(0x1000)
+file baserom/spot16_scene.bin.yaz0 align(0x1000)
+file baserom/spot16_room_0.bin.yaz0 align(0x1000)
+file baserom/spot17_scene.bin.yaz0 align(0x1000)
+file baserom/spot17_room_0.bin.yaz0 align(0x1000)
+file baserom/spot17_room_1.bin.yaz0 align(0x1000)
+file baserom/spot18_scene.bin.yaz0 align(0x1000)
+file baserom/spot18_room_0.bin.yaz0 align(0x1000)
+file baserom/spot18_room_1.bin.yaz0 align(0x1000)
+file baserom/spot18_room_2.bin.yaz0 align(0x1000)
+file baserom/spot18_room_3.bin.yaz0 align(0x1000)
+file baserom/market_day_scene.bin.yaz0 align(0x1000)
+file baserom/market_day_room_0.bin.yaz0 align(0x1000)
+file baserom/market_night_scene.bin.yaz0 align(0x1000)
+file baserom/market_night_room_0.bin.yaz0 align(0x1000)
+file baserom/HIDAN_scene.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_0.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_1.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_2.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_3.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_4.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_5.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_6.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_7.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_8.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_9.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_10.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_11.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_12.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_13.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_14.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_15.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_16.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_17.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_18.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_19.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_20.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_21.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_22.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_23.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_24.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_25.bin.yaz0 align(0x1000)
+file baserom/HIDAN_room_26.bin.yaz0 align(0x1000)
+file baserom/Bmori1_scene.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_0.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_1.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_2.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_3.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_4.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_5.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_6.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_7.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_8.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_9.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_10.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_11.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_12.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_13.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_14.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_15.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_16.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_17.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_18.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_19.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_20.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_21.bin.yaz0 align(0x1000)
+file baserom/Bmori1_room_22.bin.yaz0 align(0x1000)
+file baserom/ydan_scene.bin.yaz0 align(0x1000)
+file baserom/ydan_room_0.bin.yaz0 align(0x1000)
+file baserom/ydan_room_1.bin.yaz0 align(0x1000)
+file baserom/ydan_room_2.bin.yaz0 align(0x1000)
+file baserom/ydan_room_3.bin.yaz0 align(0x1000)
+file baserom/ydan_room_4.bin.yaz0 align(0x1000)
+file baserom/ydan_room_5.bin.yaz0 align(0x1000)
+file baserom/ydan_room_6.bin.yaz0 align(0x1000)
+file baserom/ydan_room_7.bin.yaz0 align(0x1000)
+file baserom/ydan_room_8.bin.yaz0 align(0x1000)
+file baserom/ydan_room_9.bin.yaz0 align(0x1000)
+file baserom/ydan_room_10.bin.yaz0 align(0x1000)
+file baserom/ydan_room_11.bin.yaz0 align(0x1000)
+file baserom/kenjyanoma_scene.bin.yaz0 align(0x1000)
+file baserom/kenjyanoma_room_0.bin.yaz0 align(0x1000)
+file baserom/tokinoma_scene.bin.yaz0 align(0x1000)
+file baserom/tokinoma_room_0.bin.yaz0 align(0x1000)
+file baserom/tokinoma_room_1.bin.yaz0 align(0x1000)
+file baserom/link_home_scene.bin.yaz0 align(0x1000)
+file baserom/link_home_room_0.bin.yaz0 align(0x1000)
+file baserom/kokiri_shop_scene.bin.yaz0 align(0x1000)
+file baserom/kokiri_shop_room_0.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_scene.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_0.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_1.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_2.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_3.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_4.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_5.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_6.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_7.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_8.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_9.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_10.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_11.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_12.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_13.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_14.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_15.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_16.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_17.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_18.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_19.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_20.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_21.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_room_22.bin.yaz0 align(0x1000)
+file baserom/kokiri_home_scene.bin.yaz0 align(0x1000)
+file baserom/kokiri_home_room_0.bin.yaz0 align(0x1000)
+file baserom/kakusiana_scene.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_0.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_1.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_2.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_3.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_4.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_5.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_6.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_7.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_8.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_9.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_10.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_11.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_12.bin.yaz0 align(0x1000)
+file baserom/kakusiana_room_13.bin.yaz0 align(0x1000)
+file baserom/entra_scene.bin.yaz0 align(0x1000)
+file baserom/entra_room_0.bin.yaz0 align(0x1000)
+file baserom/bdan_scene.bin.yaz0 align(0x1000)
+file baserom/bdan_room_0.bin.yaz0 align(0x1000)
+file baserom/bdan_room_1.bin.yaz0 align(0x1000)
+file baserom/bdan_room_2.bin.yaz0 align(0x1000)
+file baserom/bdan_room_3.bin.yaz0 align(0x1000)
+file baserom/bdan_room_4.bin.yaz0 align(0x1000)
+file baserom/bdan_room_5.bin.yaz0 align(0x1000)
+file baserom/bdan_room_6.bin.yaz0 align(0x1000)
+file baserom/bdan_room_7.bin.yaz0 align(0x1000)
+file baserom/bdan_room_8.bin.yaz0 align(0x1000)
+file baserom/bdan_room_9.bin.yaz0 align(0x1000)
+file baserom/bdan_room_10.bin.yaz0 align(0x1000)
+file baserom/bdan_room_11.bin.yaz0 align(0x1000)
+file baserom/bdan_room_12.bin.yaz0 align(0x1000)
+file baserom/bdan_room_13.bin.yaz0 align(0x1000)
+file baserom/bdan_room_14.bin.yaz0 align(0x1000)
+file baserom/bdan_room_15.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_scene.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_0.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_1.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_2.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_3.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_4.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_5.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_6.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_7.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_8.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_9.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_10.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_11.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_12.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_13.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_14.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_15.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_16.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_17.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_18.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_19.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_20.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_21.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_room_22.bin.yaz0 align(0x1000)
+file baserom/moribossroom_scene.bin.yaz0 align(0x1000)
+file baserom/moribossroom_room_0.bin.yaz0 align(0x1000)
+file baserom/moribossroom_room_1.bin.yaz0 align(0x1000)
+file baserom/syatekijyou_scene.bin.yaz0 align(0x1000)
+file baserom/syatekijyou_room_0.bin.yaz0 align(0x1000)
+file baserom/men_scene.bin.yaz0 align(0x1000)
+file baserom/men_room_0.bin.yaz0 align(0x1000)
+file baserom/men_room_1.bin.yaz0 align(0x1000)
+file baserom/men_room_2.bin.yaz0 align(0x1000)
+file baserom/men_room_3.bin.yaz0 align(0x1000)
+file baserom/men_room_4.bin.yaz0 align(0x1000)
+file baserom/men_room_5.bin.yaz0 align(0x1000)
+file baserom/men_room_6.bin.yaz0 align(0x1000)
+file baserom/men_room_7.bin.yaz0 align(0x1000)
+file baserom/men_room_8.bin.yaz0 align(0x1000)
+file baserom/men_room_9.bin.yaz0 align(0x1000)
+file baserom/men_room_10.bin.yaz0 align(0x1000)
+file baserom/shop1_scene.bin.yaz0 align(0x1000)
+file baserom/shop1_room_0.bin.yaz0 align(0x1000)
+file baserom/hairal_niwa_scene.bin.yaz0 align(0x1000)
+file baserom/hairal_niwa_room_0.bin.yaz0 align(0x1000)
+file baserom/ganon_tou_scene.bin.yaz0 align(0x1000)
+file baserom/ganon_tou_room_0.bin.yaz0 align(0x1000)
+file baserom/market_alley_scene.bin.yaz0 align(0x1000)
+file baserom/market_alley_room_0.bin.yaz0 align(0x1000)
+file baserom/spot20_scene.bin.yaz0 align(0x1000)
+file baserom/spot20_room_0.bin.yaz0 align(0x1000)
+file baserom/market_ruins_scene.bin.yaz0 align(0x1000)
+file baserom/market_ruins_room_0.bin.yaz0 align(0x1000)
+file baserom/entra_n_scene.bin.yaz0 align(0x1000)
+file baserom/entra_n_room_0.bin.yaz0 align(0x1000)
+file baserom/enrui_scene.bin.yaz0 align(0x1000)
+file baserom/enrui_room_0.bin.yaz0 align(0x1000)
+file baserom/market_alley_n_scene.bin.yaz0 align(0x1000)
+file baserom/market_alley_n_room_0.bin.yaz0 align(0x1000)
+file baserom/hiral_demo_scene.bin.yaz0 align(0x1000)
+file baserom/hiral_demo_room_0.bin.yaz0 align(0x1000)
+file baserom/kokiri_home3_scene.bin.yaz0 align(0x1000)
+file baserom/kokiri_home3_room_0.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_scene.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_0.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_1.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_2.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_3.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_4.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_5.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_6.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_7.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_8.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_9.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_10.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_11.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_12.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_13.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_14.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_15.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_16.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_17.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_18.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_19.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_20.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_21.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_22.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_23.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_24.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_25.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_26.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_27.bin.yaz0 align(0x1000)
+file baserom/jyasinzou_room_28.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_scene.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_0.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_1.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_2.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_3.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_4.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_5.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_6.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_7.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_8.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_9.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_10.bin.yaz0 align(0x1000)
+file baserom/ice_doukutu_room_11.bin.yaz0 align(0x1000)
+file baserom/malon_stable_scene.bin.yaz0 align(0x1000)
+file baserom/malon_stable_room_0.bin.yaz0 align(0x1000)
+file baserom/kakariko_scene.bin.yaz0 align(0x1000)
+file baserom/kakariko_room_0.bin.yaz0 align(0x1000)
+file baserom/bdan_boss_scene.bin.yaz0 align(0x1000)
+file baserom/bdan_boss_room_0.bin.yaz0 align(0x1000)
+file baserom/bdan_boss_room_1.bin.yaz0 align(0x1000)
+file baserom/FIRE_bs_scene.bin.yaz0 align(0x1000)
+file baserom/FIRE_bs_room_0.bin.yaz0 align(0x1000)
+file baserom/FIRE_bs_room_1.bin.yaz0 align(0x1000)
+file baserom/hut_scene.bin.yaz0 align(0x1000)
+file baserom/hut_room_0.bin.yaz0 align(0x1000)
+file baserom/daiyousei_izumi_scene.bin.yaz0 align(0x1000)
+file baserom/daiyousei_izumi_room_0.bin.yaz0 align(0x1000)
+file baserom/hakaana_scene.bin.yaz0 align(0x1000)
+file baserom/hakaana_room_0.bin.yaz0 align(0x1000)
+file baserom/yousei_izumi_tate_scene.bin.yaz0 align(0x1000)
+file baserom/yousei_izumi_tate_room_0.bin.yaz0 align(0x1000)
+file baserom/yousei_izumi_yoko_scene.bin.yaz0 align(0x1000)
+file baserom/yousei_izumi_yoko_room_0.bin.yaz0 align(0x1000)
+file baserom/golon_scene.bin.yaz0 align(0x1000)
+file baserom/golon_room_0.bin.yaz0 align(0x1000)
+file baserom/zoora_scene.bin.yaz0 align(0x1000)
+file baserom/zoora_room_0.bin.yaz0 align(0x1000)
+file baserom/drag_scene.bin.yaz0 align(0x1000)
+file baserom/drag_room_0.bin.yaz0 align(0x1000)
+file baserom/alley_shop_scene.bin.yaz0 align(0x1000)
+file baserom/alley_shop_room_0.bin.yaz0 align(0x1000)
+file baserom/night_shop_scene.bin.yaz0 align(0x1000)
+file baserom/night_shop_room_0.bin.yaz0 align(0x1000)
+file baserom/impa_scene.bin.yaz0 align(0x1000)
+file baserom/impa_room_0.bin.yaz0 align(0x1000)
+file baserom/labo_scene.bin.yaz0 align(0x1000)
+file baserom/labo_room_0.bin.yaz0 align(0x1000)
+file baserom/tent_scene.bin.yaz0 align(0x1000)
+file baserom/tent_room_0.bin.yaz0 align(0x1000)
+file baserom/nakaniwa_scene.bin.yaz0 align(0x1000)
+file baserom/nakaniwa_room_0.bin.yaz0 align(0x1000)
+file baserom/ddan_boss_scene.bin.yaz0 align(0x1000)
+file baserom/ddan_boss_room_0.bin.yaz0 align(0x1000)
+file baserom/ddan_boss_room_1.bin.yaz0 align(0x1000)
+file baserom/ydan_boss_scene.bin.yaz0 align(0x1000)
+file baserom/ydan_boss_room_0.bin.yaz0 align(0x1000)
+file baserom/ydan_boss_room_1.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_bs_scene.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_bs_room_0.bin.yaz0 align(0x1000)
+file baserom/HAKAdan_bs_room_1.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_bs_scene.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_bs_room_0.bin.yaz0 align(0x1000)
+file baserom/MIZUsin_bs_room_1.bin.yaz0 align(0x1000)
+file baserom/ganon_scene.bin.yaz0 align(0x1000)
+file baserom/ganon_room_0.bin.yaz0 align(0x1000)
+file baserom/ganon_room_1.bin.yaz0 align(0x1000)
+file baserom/ganon_room_2.bin.yaz0 align(0x1000)
+file baserom/ganon_room_3.bin.yaz0 align(0x1000)
+file baserom/ganon_room_4.bin.yaz0 align(0x1000)
+file baserom/ganon_room_5.bin.yaz0 align(0x1000)
+file baserom/ganon_room_6.bin.yaz0 align(0x1000)
+file baserom/ganon_room_7.bin.yaz0 align(0x1000)
+file baserom/ganon_room_8.bin.yaz0 align(0x1000)
+file baserom/ganon_room_9.bin.yaz0 align(0x1000)
+file baserom/ganon_boss_scene.bin.yaz0 align(0x1000)
+file baserom/ganon_boss_room_0.bin.yaz0 align(0x1000)
+file baserom/jyasinboss_scene.bin.yaz0 align(0x1000)
+file baserom/jyasinboss_room_0.bin.yaz0 align(0x1000)
+file baserom/jyasinboss_room_1.bin.yaz0 align(0x1000)
+file baserom/jyasinboss_room_2.bin.yaz0 align(0x1000)
+file baserom/jyasinboss_room_3.bin.yaz0 align(0x1000)
+file baserom/kokiri_home4_scene.bin.yaz0 align(0x1000)
+file baserom/kokiri_home4_room_0.bin.yaz0 align(0x1000)
+file baserom/kokiri_home5_scene.bin.yaz0 align(0x1000)
+file baserom/kokiri_home5_room_0.bin.yaz0 align(0x1000)
+file baserom/ganon_final_scene.bin.yaz0 align(0x1000)
+file baserom/ganon_final_room_0.bin.yaz0 align(0x1000)
+file baserom/kakariko3_scene.bin.yaz0 align(0x1000)
+file baserom/kakariko3_room_0.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_scene.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_0.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_1.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_2.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_3.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_4.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_5.bin.yaz0 align(0x1000)
+file baserom/hakasitarelay_room_6.bin.yaz0 align(0x1000)
+file baserom/shrine_scene.bin.yaz0 align(0x1000)
+file baserom/shrine_room_0.bin.yaz0 align(0x1000)
+file baserom/turibori_scene.bin.yaz0 align(0x1000)
+file baserom/turibori_room_0.bin.yaz0 align(0x1000)
+file baserom/shrine_n_scene.bin.yaz0 align(0x1000)
+file baserom/shrine_n_room_0.bin.yaz0 align(0x1000)
+file baserom/shrine_r_scene.bin.yaz0 align(0x1000)
+file baserom/shrine_r_room_0.bin.yaz0 align(0x1000)
+file baserom/ganontika_scene.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_0.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_1.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_2.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_3.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_4.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_5.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_6.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_7.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_8.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_9.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_10.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_11.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_12.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_13.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_14.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_15.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_16.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_17.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_18.bin.yaz0 align(0x1000)
+file baserom/ganontika_room_19.bin.yaz0 align(0x1000)
+file baserom/hakaana2_scene.bin.yaz0 align(0x1000)
+file baserom/hakaana2_room_0.bin.yaz0 align(0x1000)
+file baserom/gerudoway_scene.bin.yaz0 align(0x1000)
+file baserom/gerudoway_room_0.bin.yaz0 align(0x1000)
+file baserom/gerudoway_room_1.bin.yaz0 align(0x1000)
+file baserom/gerudoway_room_2.bin.yaz0 align(0x1000)
+file baserom/gerudoway_room_3.bin.yaz0 align(0x1000)
+file baserom/gerudoway_room_4.bin.yaz0 align(0x1000)
+file baserom/gerudoway_room_5.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_scene.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_0.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_1.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_2.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_3.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_4.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_5.bin.yaz0 align(0x1000)
+file baserom/HAKAdanCH_room_6.bin.yaz0 align(0x1000)
+file baserom/hairal_niwa_n_scene.bin.yaz0 align(0x1000)
+file baserom/hairal_niwa_n_room_0.bin.yaz0 align(0x1000)
+file baserom/bowling_scene.bin.yaz0 align(0x1000)
+file baserom/bowling_room_0.bin.yaz0 align(0x1000)
+file baserom/hakaana_ouke_scene.bin.yaz0 align(0x1000)
+file baserom/hakaana_ouke_room_0.bin.yaz0 align(0x1000)
+file baserom/hakaana_ouke_room_1.bin.yaz0 align(0x1000)
+file baserom/hakaana_ouke_room_2.bin.yaz0 align(0x1000)
+file baserom/hylia_labo_scene.bin.yaz0 align(0x1000)
+file baserom/hylia_labo_room_0.bin.yaz0 align(0x1000)
+file baserom/souko_scene.bin.yaz0 align(0x1000)
+file baserom/souko_room_0.bin.yaz0 align(0x1000)
+file baserom/souko_room_1.bin.yaz0 align(0x1000)
+file baserom/souko_room_2.bin.yaz0 align(0x1000)
+file baserom/miharigoya_scene.bin.yaz0 align(0x1000)
+file baserom/miharigoya_room_0.bin.yaz0 align(0x1000)
+file baserom/mahouya_scene.bin.yaz0 align(0x1000)
+file baserom/mahouya_room_0.bin.yaz0 align(0x1000)
+file baserom/takaraya_scene.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_0.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_1.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_2.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_3.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_4.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_5.bin.yaz0 align(0x1000)
+file baserom/takaraya_room_6.bin.yaz0 align(0x1000)
+file baserom/ganon_sonogo_scene.bin.yaz0 align(0x1000)
+file baserom/ganon_sonogo_room_0.bin.yaz0 align(0x1000)
+file baserom/ganon_sonogo_room_1.bin.yaz0 align(0x1000)
+file baserom/ganon_sonogo_room_2.bin.yaz0 align(0x1000)
+file baserom/ganon_sonogo_room_3.bin.yaz0 align(0x1000)
+file baserom/ganon_sonogo_room_4.bin.yaz0 align(0x1000)
+file baserom/ganon_demo_scene.bin.yaz0 align(0x1000)
+file baserom/ganon_demo_room_0.bin.yaz0 align(0x1000)
+file baserom/face_shop_scene.bin.yaz0 align(0x1000)
+file baserom/face_shop_room_0.bin.yaz0 align(0x1000)
+file baserom/kinsuta_scene.bin.yaz0 align(0x1000)
+file baserom/kinsuta_room_0.bin.yaz0 align(0x1000)
+file baserom/ganontikasonogo_scene.bin.yaz0 align(0x1000)
+file baserom/ganontikasonogo_room_0.bin.yaz0 align(0x1000)
+file baserom/ganontikasonogo_room_1.bin.yaz0 align(0x1000)
+file baserom/bump_texture_static.bin.yaz0 align(0x1000)
+file baserom/anime_model_1_static.bin.yaz0 align(0x1000)
+file baserom/anime_model_2_static.bin.yaz0 align(0x1000)
+file baserom/anime_model_3_static.bin.yaz0 align(0x1000)
+file baserom/anime_model_4_static.bin.yaz0 align(0x1000)
+file baserom/anime_model_5_static.bin.yaz0 align(0x1000)
+file baserom/anime_model_6_static.bin.yaz0 align(0x1000)
+file baserom/anime_texture_1_static.bin.yaz0 align(0x1000)
+file baserom/anime_texture_2_static.bin.yaz0 align(0x1000)
+file baserom/anime_texture_3_static.bin.yaz0 align(0x1000)
+file baserom/anime_texture_4_static.bin.yaz0 align(0x1000)
+file baserom/anime_texture_5_static.bin.yaz0 align(0x1000)
+file baserom/anime_texture_6_static.bin.yaz0 align(0x1000)
+file baserom/softsprite_matrix_static.bin.yaz0 align(0x1000)
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null
+null

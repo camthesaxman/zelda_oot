@@ -1,0 +1,1260 @@
+CloudMax's NTSC 1.0 Nemu64 Bookmarks
+	A lot of things here makes no sense whatsoever, but there may be some useful stuff in here.
+	Many things are probably incorrect in these lists, if you want reliable information, use my RAM notes.
+	CPU
+		a strength stuff
+			CPU 0x80074C30: 4
+			CPU 0x80075B18: 2
+			CPU 0x80075C84: 3
+			CPU 0x80079B08: 5
+			CPU 0x8007A120: 1 (Used to get strength upgrade)
+			CPU 0x801FCF30: 6
+		Age stuff
+			CPU 0x8002162C: 2
+			CPU 0x8007948C: 1
+			CPU 0x80079B0C: Strength Usability
+			CPU 0x8007A110: Strength Upgrade
+			CPU 0x8007A350: 5
+			CPU 0x8007A3B8: 6
+			CPU 0x8007A3FC: 7
+			CPU 0x8007A774: 3
+			CPU 0x8007ACB8: Shield Related?
+			CPU 0x8007ACF4: 8
+			CPU 0x8007C050: 4
+			CPU 0x80395AFC: Crawlspace
+		bow slingshot stuff
+			bow/sling
+				Display
+					CPU 0x8007ABD0: 
+					Model
+						CPU 0x8007AE98: V0 = Save RAM (Upper bytes)
+						CPU 0x8007AE9C: V0 = Age
+						CPU 0x8007AEA0: T9 = 800F0000
+						CPU 0x8007AEA4: T8 = Age shift left 2 (This will result in Child Link reading the next display list)
+						CPU 0x8007AEA8: T9 = T9 + T8 (Display Offset)
+						CPU 0x8007AEAC: Load bow/sling Display List
+							06018048 Slingshot
+							0602A248 Bow
+							0602FE80 Bow (According to the-gcn)
+							MEM 0x800F7A08: Bow
+							MEM 0x800F7A0C: Sling
+							MEM 0x801DAB72: Item in Hand
+					String
+						CPU 0x8007BD68: Load bow/sling String Display List
+							060221A8 Slingshot
+							06030490 Bow
+				equip
+					CPU 0x8038C9AC: 0x0030(SP) = A2 (Item ID)
+					CPU 0x8038CDEC: V0 = Item Equipping
+					CPU 0x8038CDF0: T9 = Current Item
+					CPU 0x8038CE3C: Set item in hand?
+				use
+					CPU 0x80072304: If (A0 == AT), reduce bombchus
+					CPU 0x80072358: If (A0 == AT), reduce arrows
+					CPU 0x80072384: Set Ammo
+					CPU 0x800723D4: If (A0 == AT), reduce deku seeds
+					CPU 0x8038AD7C: T0 =Save RAM offset
+					CPU 0x8038AD80: T0 = Save RAM offset
+					CPU 0x8038AD84: T6 = Age
+					CPU 0x8038AD88: T7 = 0x3 (Bow)
+					CPU 0x8038AD8C: T4 = 0x6 (Slingshot)
+					CPU 0x8038AD90: If (T6 != 0) Branch 0x8038ADC8
+					CPU 0x8038AD98: Store which item you're using in RAM
+					CPU 0x8038ADC8: 
+					CPU 0x8038ADF8: If (V1 == 0) Branch Likely 0x8038AE0C
+					CPU 0x8038ADFC: T7 = 0x0000(A2) (Item Offset?)
+					CPU 0x8038AE0C: T8 = 0x80100000
+					CPU 0x8038AE10: T8 = T8 + T7
+					CPU 0x8038AE14: T8 = 0x8F34(T8) (Item Slot ID)
+					CPU 0x8038AE18: T9 = 8011A5D0 + T8 (Item Slot ID)
+					CPU 0x8038AE1C: V0 = 0x008C(T9) (Ammo)
+					CPU 0x8038BB54: Set Ammo Amount
+			CPU 0x8038AEDC: Jump to use bow/sling
+			CPU 0x8038BAF4: Jump to use bow/sling
+			MEM 0x800F8F30: Items
+		CPU 0x800787AC: Rupee Increaser
+		CPU 0x8007886C: Rupee Decreaser
+		CPU 0x80079668: Set Item Model
+		CPU 0x8007ABD0: Get Item Model
+		CPU 0x80099FAC: Generate Pause Image
+		CPU 0x8038A514: Change Sword State
+		Egg Hatcher
+			CPU 0x80061BF8: A1 = 0x21
+			CPU 0x80061C00: A2 = 0x22
+			CPU 0x80061C0C: A1 = 0x2D
+			CPU 0x80061C14: A2 = 0x2E
+			CPU 0x800719E4: 0x8011F0C4 = A1 (Store which item to override)
+			CPU 0x800719E8: 0x8011F0C8 = A2 (Store which item to replace it)
+			CPU 0x80071A00: A0 = 0x8011A5D0 (Save RAM offset)
+			CPU 0x80071A08: A3 = A1 (Item to replace)
+			CPU 0x80071A0C: V1 = A0+V0
+			CPU 0x80071A10: T6 = Current Item ID
+			CPU 0x80071A1C: If (A3==T6)
+				CPU 0x80071A20:  
+				CPU 0x80071A24: Current Item Slot Item = A2 (Item to replace with)
+				CPU 0x80071A28: V0 = 0x1 (Initial C Item Offset, set to 0x1 to skip B button)
+				CPU 0x80071A2C: V1 = A0 + V0
+				CPU 0x80071A30: T7 = Current C Item ID (C Item Loop Start)
+				CPU 0x80071A34: If (A3==T7)
+					CPU 0x80071A38: V0 = V0+0x1
+					CPU 0x80071A3C: Current C Item = A2 (0x22 (Chicken))
+					CPU 0x80071A40:  
+					CPU 0x80071A44:  
+					CPU 0x80071A48:  
+					CPU 0x80071A4C:  
+					CPU 0x80071A50:  
+					CPU 0x80071A54:  
+				CPU 0x80071A58:  
+				CPU 0x80071A5C:  
+				CPU 0x80071A60: AT = (V0<4?1:0)
+				CPU 0x80071A64: If (AT!=0) Jump to 0x80071A30 (C Item Loop End)
+				CPU 0x80071A68:  
+				CPU 0x80071A6C:  
+				CPU 0x80071A70:  
+			CPU 0x80071A74: 
+		Equip Tunic & Boots
+			CPU 0x80081130: 
+			CPU 0x8008116C: Set Tunic
+			CPU 0x8008117C: Set Boots
+		Health Modifier Function
+			CPU 0x800720BC: Health Function Start?
+			CPU 0x80072138: S0 = S0 >> 0x10
+			CPU 0x8007213C: T8 = Current Health
+			CPU 0x80072140: V0 = Max Health
+			CPU 0x80072144: T9 = T8 + S0
+			CPU 0x80072148: Current Health = T9
+			CPU 0x8007214C: A0 = Current Health
+			CPU 0x80072150: If (Max Health (V0) < Current Health (A0)) AT = True
+			CPU 0x80072154: If (AT == True)
+				CPU 0x80072158: NOP
+				CPU 0x8007215C: Current Health = Max Health (V0)
+				CPU 0x80072160: A0 = Current Health
+			CPU 0x80072164: If (A0 >= 0) Skip to 0x80072178
+				CPU 0x80072170: NOP
+			CPU 0x80072178: If (A0 > 0) Skip to 0x80072188
+			CPU 0x80072188: V0 = R0 + 0x0001
+		Item Button Usability
+			indoor (very restricted)
+				CPU 0x8006ECA0: Enter House Disable
+				CPU 0x8006EDD8: If (V0 < 21) AT = 1 (1 = Not trade item)
+				CPU 0x8006EDDC: Branch if AT != 0
+				CPU 0x8006EDE4: If (V0 < 38) AT = 1 (1 = Trade item)
+				CPU 0x8006EDE8: Branch Likely if AT = 0
+				CPU 0x8006EDF4: Enter House Enable
+				CPU 0x8006EE2C: V0 = Item
+				CPU 0x8006EE38: Branch if Item is hookshot
+				CPU 0x8006EE44: Branch if Item isn't Longshot
+				CPU 0x8006EE50: Branch if button is already disabled
+				CPU 0x8006EE5C: Disable Button (Indoor)
+				CPU 0x8006F154: Disable Button (T1 is disabler)
+			water
+				CPU 0x8006D9E0: OPACITY
+				CPU 0x8006E390: not
+				CPU 0x8006E888: Branch if not in water
+				CPU 0x8006E8A0: ADDIU A1, R0, 0x0001 (Skips checking B button for items under water)
+				CPU 0x8006E8A8: Disable B
+				CPU 0x8006E8B0: Button Loop Start
+				CPU 0x8006E8C0: AT = 0x2 (Standing under water state)
+				CPU 0x8006E8D8: BNE V0, AT, 0x8006E92C (Branch If you're not standing under water)
+				CPU 0x8006E8DC: Allow hookshot under water
+				CPU 0x8006E8E8: Allow longshot under water
+				CPU 0x8006E8FC: Disables 
+				CPU 0x8006E928: Enable Button under water
+				CPU 0x8006ECA8: Disable
+		Pause Menu
+			CPU 0x8038ECC8: 
+			CPU 0x8038ECCC: 
+			CPU 0x8038ECE0: 
+			CPU 0x8038FA94: Y
+			CPU 0x8038FDA4: U
+			Equipment Screen
+				CPU 0x8038DF8C: S0 = S0+0x3B
+				Move Cursor
+					Left
+						CPU 0x8038D7A4: Set Cursor X Position
+					Right
+						CPU 0x8038D8E0: V0 = Cursor Y Position
+						CPU 0x8038D8E4: AT = (V0<0x3?1:0)
+						CPU 0x8038D8E8: If (AT==R0) Jump to 0x8038D96C
+						CPU 0x8038D8EC: T6 = V0 + 1
+						CPU 0x8038D8F4: Cursor Y Position = T6
+			Generate Item Usability
+				CPU 0x8000118C: Set Usability
+				CPU 0x800011EC: Set Usability
+				CPU 0x80001204: Set Usability
+				CPU 0x80001210: Set Usability
+				CPU 0x80001218: Set Usability
+				CPU 0x80001224: Set Usability
+			Inventory Screen
+				CPU 0x8038EB10: 
+				CPU 0x8038FCF4: T4 = T3+0x0074 (Item ID)
+				CPU 0x80394CC8: 
+				Equip
+					CPU 0x8038F690: V0 = S1 (Item Usability)
+					CPU 0x8038F694: AT = 0x9
+					CPU 0x8038F698: If (V0==AT) Branch Likely 0x8038F6AC
+				Loop
+					CPU 0x8038F588: S1 = 0x1
+					CPU 0x8038F58C: S0+0x022C = T0
+					CPU 0x8038F590: S0+0x0218 = A3 (Selected Item)
+					CPU 0x8038F594: S1 = 0x2
+					CPU 0x8038F598: If (S1==R0) Branch Likley 0x8038F4F8
+					CPU 0x8038F59C: V0 = S0+0x216
+					CPU 0x8038F5A0: A0 = S0+0x218 (Selected Item)
+					CPU 0x8038F5A4: SP+0x0098 = A0 (Selected Item)
+					CPU 0x8038F5A8: T5 = 0x4
+					CPU 0x8038F5AC: AT = 0x1
+					CPU 0x8038F5B0: If (S1!=AT) Branch 0x8038F5CC
+					CPU 0x8038F5B4: S0+0x0260 = T5
+					CPU 0x8038F5B8: T6 = S3+A0
+					CPU 0x8038F5BC: T7 = T6+0x0074
+					CPU 0x8038F5C0: SP+0x009A = T7
+					CPU 0x8038F5C4: If (R0==R0) Branch 0x8038F5E4
+						CPU 0x8038F5C8: T1 = T7&0xFFFF
+						CPU 0x8038F5CC: AT = 0x2
+						CPU 0x8038F5D0: if (S1==AT) Branch 0x8038F5E4
+							CPU 0x8038F5D4: T8 = S3+A0 
+							CPU 0x8038F5D8: T9 = T8+0x0074 (Item ID)
+							CPU 0x8038F5DC: SP+0x009A = T9 (Item ID)
+							CPU 0x8038F5E0: T1 = T9&0xFFFF
+					CPU 0x8038F5E4: T4 = SP+0x009A (Item ID)
+					CPU 0x8038F5E8: T7 = 0x803A0000
+					CPU 0x8038F5EC: T7 = T7 + 0xF114 = 0x8039F114
+						_Info
+							1. T7 is the Offset for the Item Usability values
+							2. The Item Usability values are set when loading the Pause Menu
+						MEM 0x8039F114: 
+					CPU 0x8038F5F0: S0+0x023E = T4 (Item ID)
+					CPU 0x8038F5F4: T5 = SP+0x0098
+					CPU 0x8038F5F8: AT = 0x9
+					CPU 0x8038F5FC: A0 = S0 |= R0
+					CPU 0x8038F600: S0+0x0246 = T5
+					CPU 0x8038F604: T6 = SP+0x0098 (Selected Item)
+					CPU 0x8038F608: S1 = T6 + T7 (Item Usability)
+					CPU 0x8038F60C: V0 = S1 (Item Usability)
+					CPU 0x8038F610: If (V0==AT) Branch Likely 0x8038F630
+						_Info
+							1. AT is always 0x9 at this point
+							2. V0 is the item usability (0x9 = Child & Adult)
+							3. As a result, the game skips the usability checks if it is 0x9
+						CPU 0x8038F614: AT = 0x03E7
+						CPU 0x8038F618: T8 = Age
+						CPU 0x8038F61C: T9 = 0x1
+						CPU 0x8038F620: If (V0==T8) Branch Likley 0x8038F630
+							CPU 0x8038F624: AT = 0x03E7
+							CPU 0x8038F628: S0+0x025E = T9 (Grey out Item Name)
+					CPU 0x8038F630: 
+				Loop 3
+					CPU 0x8038FACC: V0 = V0+0xF114 (Item Usability)
+					CPU 0x8038FAD0: AT = 0x9
+					CPU 0x8038FAD8: If (V0==AT) Branch 0x8038FAEC
+						CPU 0x8038FAE0: T7 = Age
+						CPU 0x8038FAE4: If (V0!=T7) Branch Likely 0x8038FCCC
+							_Info
+								1. If this is true, it means the item isn't usable
+				New Loop
+					CPU 0x8038EA24: T2 = 0x9
+					CPU 0x8038EA40: V1 = T9+0x008C (Item Amount)
+					CPU 0x8038EA64: T4 = T4+0xF114 (Item Usability)
+					CPU 0x8038EA68: If (T2==T4) Branch Likely 0x8038EAB8
+					CPU 0x8038EAE0: If (V1!=0) Branch 0x8038EB1C
+					CPU 0x8038EAE4: T8 = SP+0x000A
+					CPU 0x8038EB1C: AT = 0x2
+					CPU 0x8038EB20: If (T8!=AT) Branch 0x8038EB70
+					CPU 0x8038EC28: T6 = T7+0x008C (Item Amount)
+					CPU 0x8038EC44: If (T6==T7) Branch Likely 0x8038ECC0
+						_Info
+							1. This is where they check if you've maxed your Ammo
+		Time of Day Modifier
+			CPU 0x8005BF98: Day/Night Transition
+			CPU 0x8005D600: Time of Day Increaser
+			CPU 0x8005D60C: Time of Day Tick
+			CPU 0x8005D614: Time of Day Tick
+			CPU 0x8005D61C: Time of Day Tick
+			CPU 0x8005D660: AT = (V0<0x4555?1:0)
+			CPU 0x8005D668: Day
+			CPU 0x8005D670: Night
+		Transition
+			CPU 0x8009A97C: Day/Night
+	Functions
+		Button Activators
+			CPU 0x8005B860: Button Activators Start
+			CPU 0x8005B8E8: Run 0x8009CB08 it will return V0 = 1 if you don't have control over link
+			CPU 0x8005B900: Branch past buttons if you don't have control over link
+			CPU 0x8005B968: T5 = Buttons Pressed
+			CPU 0x8005B970: 
+			CPU 0x8005B974: If L Button isn't Pressed Branch Likely 0x8005B994
+				CPU 0x8005B978: ???Get if you're opening Menu
+					MEM 0x801C84C0: 0x1000 = Opening Menu
+			CPU 0x8005B9A0: If Start Button isn't Pressed Branch 0x8005BA74
+			CPU 0x8005B9DC: If T7 != R0 Branch Likely 0x8005BA28
+			CPU 0x8005BA64: Set State Menu Flag to 1
+				MEM 0x801D8DD4: Menu State Flag
+		Control over Link
+			CPU 0x8007938C: 
+			CPU 0x800793AC: Remove control when Disable Flag is set
+			CPU 0x800793FC: Remove control when hookshoting
+			CPU 0x8007941C: Remove control when using Magic
+			CPU 0x80079464: Remove control when Using Item in Air
+				MEM 0x8011B9C0: 
+		CPU 0x8000085C: dma Transfer
+			_Info
+			A0 = ram address
+			A1 = rom address
+			A2 = size
+		CPU 0x80000B0C: Get File
+			_Info
+			A0 = pointer to instance of structure with format:
+				${vv vv vv vv dd dd dd dd ss ss ss}
+					d = destination in ram (must be allocated!!!)
+					s = size of file
+					v = rom virtual address
+		CPU 0x80025110: Spawn Actor
+			_Info
+				Actor List: http://wiki.spinout182.com/w/Complete_Actor_Listing
+				Actors
+					Minuet of Forest 0x008C
+			A0 = $801CA0C4
+			A1 = $801C84A0 (global context)
+			A2 = Actor Number
+			SP = floating point x, y, z position; Half-float (s10.5) x, y, z rotation; actor variable
+		CPU 0x800646F0: Play Sound Effect
+			A0 = Sound Effect
+				4801 = Exit Menu
+				4823 = Saving
+		CPU 0x8006FB50: Update Item Icon
+			A0 = 0x801C84A0
+			A1 = Button ID
+		CPU 0x8006FDCC: Set Item (Using Item ID)
+			A0 = 801C84A0
+			A1 = Item ID
+			CPU 0x8006FDCC: start?
+			CPU 0x8006FEAC: bnez cucco bottle
+			CPU 0x8006FF64: bnez cucco bottle
+			CPU 0x80070040: bnez cucco bottle
+			CPU 0x800700D0: bnez cucco bottle
+			CPU 0x80070114: addiu cucco bottle
+			CPU 0x80070128: bne cucco bottle
+			CPU 0x800701AC: bne cucco bottle
+			CPU 0x80070268: bne cucco bottle
+			CPU 0x80070424: bne cucco bottle
+			CPU 0x800704F8: bne cucco bottle
+			CPU 0x800705D0: bne cucco bottle
+			CPU 0x800706A4: bne cucco bottle
+			CPU 0x80070784: bnez cucco bottle
+			CPU 0x80070848: bne cucco bottle
+			CPU 0x80070B50: bnez cucco bottle
+			CPU 0x80070C4C: addiu cucco bottle
+			CPU 0x80070C5C: bne cucco bottle
+			CPU 0x80070CE8: slti cucco bottle
+			CPU 0x80070D74: addiu cucco bottle
+			CPU 0x80070D78: bne cucco bottle
+			CPU 0x80070DBC: bnel cucco bottle
+			CPU 0x80070E48: bnel cucco bottle
+			CPU 0x80070ED4: bne cucco bottle
+			CPU 0x80070EF8: addiu cucco bottle
+			CPU 0x80070EFC: bnel cucco bottle
+			CPU 0x80070F78: bne cucco bottle
+			CPU 0x80070FF0: addiu cucco bottle
+			CPU 0x80070FF4: beq cucco bottle
+			CPU 0x80071000: bne cucco bottle
+			CPU 0x80071020: addiu cucco bottle
+			CPU 0x80071024: bne cucco bottle
+			CPU 0x80071054: bnel cucco bottle
+			CPU 0x80071074: bnel cucco bottle
+			CPU 0x800710C4: bnel cucco bottle
+			CPU 0x80071114: bnez cucco bottle
+			CPU 0x80071140: bne cucco bottle
+			CPU 0x80071170: bnel cucco bottle
+			CPU 0x80071188: cucco bottle prev
+			CPU 0x8007119C: Gain cucco bottle jump
+		CPU 0x80071B7C: Set Item (Using Button ID)
+			A0 = 0x801C84A0
+			A1 = Item ID
+			A2 = Button ID (B, C-L, C-D, C-R)
+			CPU 0x80071BD0: Set Item
+		CPU 0x800721F4: Modify Item Amount
+			A0 = Item ID
+			A1 = Amount
+		CPU 0x80079200: Boots Behaviour
+			_Info
+				A1 0x801DAA30
+			CPU 0x80079228: V0 = Boots
+			CPU 0x8007922C: T8 = 0x800F
+			CPU 0x80079230: T8 = 0x800F7648
+			CPU 0x80079234: If (Boots != Kokiri Boots) Branch 0x80079250
+			CPU 0x80079250: If (Boots != Iron Boots) Branch Likely 0x80079288
+			CPU 0x80079288: Hover Boots
+			CPU 0x80079384: End
+			CPU 0x80393428: Boots Behaviour Jump Point Unknown
+			CPU 0x80393B60: Boots Behaviour Jump Point Exit Water
+			CPU 0x80393F74: Boots Behaviour Jump Point Enter Water
+		CPU 0x800905D4: Save
+		CPU 0x800C6B54: Play Sequence
+			_Info
+				Sequences: http://wiki.spinout182.com/w/Zelda_64:_OoT_Music_Values
+			A0 = $00000000
+			A1 = sequence number
+		CPU 0x800CAA70: Set Background Music
+			_Info
+				Sequences: http://wiki.spinout182.com/w/Zelda_64:_OoT_Music_Values
+			A0 = sequence number
+		CPU 0x8038A3A4: Pull out Item
+			_Info
+				Action List: http://wiki.spinout182.com/w/Zelda_64:_OoT_Action_Parameters
+			A0 = $801C8A4A0
+			A1 = $801DAA30
+			A2 = Action to perform
+			Calls
+				CPU 0x80388D88: Call 1
+				CPU 0x80395404: Call 2
+		Create File
+			CPU 0x80090C18: Prepare Create File
+			CPU 0x80090EB0: End Prepare Create File
+			CPU 0x803AB0A4: Get File Name
+				MEM 0x801E4E9C: File Name
+			CPU 0x803AB0B0: Branch if Name begins with a space
+			CPU 0x803AB128: JAL to Prepare Create File
+			CPU 0x803AB1B0: save?
+			CPU 0x803AB1F4: save?
+			CPU 0x803AB248: save?
+			CPU 0x803AB2C4: save?
+			CPU 0x803AB314: save?
+		Enter Water
+			_Calls
+				_Call Calls
+					CPU 0x803A030C: Jump to When jumping into water start
+				CPU 0x80393F90: When jumping into water start
+				CPU 0x803940C0: When jumping into water
+			CPU 0x80393DBC: Enter Water Start
+		Hookshot/longshot Launch
+			CPU 0x8021FB30: Branch if it shouldn't shoot
+			CPU 0x8021FB44: Longshot Range (0x1A)
+			CPU 0x8021FB54: Hookshot Range (0x0D)
+			CPU 0x8038AACC: Launch Action
+				CPU 0x8038A804: Launch Action Start
+					CPU 0x8038AC9C: Check if Action can be Launched
+						CPU 0x8038D0D4: Check if Action can be Launched Start
+							CPU 0x8038DDFC: Jump
+			Hookshot Action
+				CPU 0x8038BDA4: Branch 0x8038BDB8 if you can't shoot
+				CPU 0x8038BDAC: Jump to Hookshot Shoot Action
+				CPU 0x8038BDD4: Add loaded state
+			Hookshot Shoot Action
+				CPU 0x8038BAB0: Start
+				CPU 0x8038BAE0: Branch to Hook Start
+				CPU 0x8038BB9C: Use Hook Start
+				CPU 0x8038BBBC: Set Hook Var
+		Load File
+			CPU 0x800903E4: Change Entrance to Link's House as Child if not in specific scenes
+		Move Link
+			_Calls
+				CPU 0x803A00A8: Standing
+					CPU 0x803A0020: Jump
+			CPU 0x80021124: Start
+			CPU 0x80021190: Set Z Coord
+				CPU 0x80021134: Game Speed
+				CPU 0x803A0084: Z Modifier
+					CPU 0x8039FFFC: a jump here
+					CPU 0x803A0000: F6
+		Movement
+			Control Stick
+				CPU 0x803A0AF8: SW T8, 0x0014(T6) (Store Control Stick Coords to 0x8011F0A0)
+			CPU 0x80389B20: Jump to Move
+			Move
+				CPU 0x8006385C: start move
+				CPU 0x800638A0: Set Movement Speed (Walk?)
+				CPU 0x800638C4: Set Movement Speed (Stop?)
+				CPU 0x80063ACC: Set Maximum/Minimum Speed Var
+				CPU 0x80063B28: Set Movement Speed (Run?)
+				CPU 0x80063B4C: Set Movement Speed (Maximum/Minimum)
+				CPU 0x80063B74: Start
+				CPU 0x80063B7C: Move Word to Floating-Point (AT -> F14) (F14 is maximum tilt)
+				CPU 0x80063B88: T6 Load Left/Right CS Coords from 0x8011F0A0
+				CPU 0x80063B8C: T7 Load Up/Down CS Coords from 0x8011F0A0
+				CPU 0x80063B90: Move Word to Floating-Point (T6 -> F4)
+				CPU 0x80063B94: Move Word to Floating-Point (T7 -> F6)
+				CPU 0x80063B98: Convert FP to Single FP (F4 -> F2)
+				CPU 0x80063B9C: Convert FP to Single FP (F6 -> F12)
+				CPU 0x80063BA0: Multiply FP (F8 = F2*F2)
+				CPU 0x80063BA4: NOP
+				CPU 0x80063BA8: Multiply FP (F10 = F12*F12)
+				CPU 0x80063BAC: F0 = F8 + F10
+				CPU 0x80063BB0: F0 = sqrt(F0)
+				CPU 0x80063BB4: If (F14 < F0) cond = 1; else cond=0
+				CPU 0x80063BB8: Store Word from FP (0x0000(A0) = F0) (Tilt)
+				CPU 0x80063BBC: If (cond == 0) Branch 0x80063BCC (Branch if link isn't running at full speed)
+				CPU 0x80063BC0: NOP
+				CPU 0x80063BC4: Branch to 0x80063BD4
+				CPU 0x80063BCC: Load Word to FP (F16 = 0x0000(A0))
+				CPU 0x80063BD0: Store Word from FP (0x0000(A0) = F16)
+				CPU 0x80063BD4: JAL 0x800AA4F8 (Turn function)
+					CPU 0x800AA524: Branch 25
+					CPU 0x800AA534: Branch 11
+					CPU 0x800AA544: Branch 7
+					CPU 0x800AA584: Branch 7
+					CPU 0x800AA5C0: Branch 14
+					CPU 0x800AA5D8: Branch 8
+					CPU 0x8039FA5C: Rotate Start
+						CPU 0x803A0004: Rotate
+					CPU 0x803A0B2C: Start Rotate
+		Open Menu
+			A set if you're opening menu
+				CPU 0x800A2818: Get if you're opening menu
+					MEM 0x8011D730: get from here
+						CPU 0x800A24A0: get from here
+							CPU 0x800A23FC: start
+								CPU 0x800A2660: JAL to start
+									CPU 0x800A25DC: start
+										CPU 0x800A29A0: JAL to start
+											CPU 0x800A2918: start
+												CPU 0x800A296C: test
+						CPU 0x800A24AC: not
+				CPU 0x800A2820: Set if you're opening menu
+				CPU 0x800A2824: not
+			CPU 0x800051B4: A jump
+			CPU 0x80099F48: Opening Process
+			CPU 0x80099F68: Very Early
+			CPU 0x80099F90: Open Menu?!
+			CPU 0x80099FC4: Set Opening Menu Flag to 2
+			CPU 0x8009A020: Step Opening Menu Flag
+			CPU 0x8009A050: Clear RAM Space
+			CPU 0x8009A06C: Set Up RAM Space (Free to inject custom item usability after it)
+				CPU 0x80099C8C: Set Up RAM Space
+			CPU 0x8009A074: Custom Menu Setup Injection Point
+			CPU 0x8009A084: Pausing Process seems to end here
+			CPU 0x8009A0A0: Jump to 0x8039B760
+			CPU 0x8009BEB0: Check if you're opening Menu
+			CPU 0x8009BEC4: Jump to Open Menu Process
+			CPU 0x8009C5C8: Set Pause Image State to 3
+			CPU 0x800A279C: Function used to set if you're opening menu
+			CPU 0x8039B204: Set Menu state flag to 6
+			CPU 0x8039B8A4: Jump to 0x8039B8AC
+			CPU 0x8039B94C: Jump to 0x8007C09C
+			Load Inventory
+				CPU 0x8039B988: Function Start
+				CPU 0x8039B990: T1 = Save RAM Offset (Upper Bytes)
+				CPU 0x8039B99C: T1 = Save RAM Offset
+				CPU 0x8039B9A8: Loop Start
+				CPU 0x8039B9B0: V0 = Item Usability
+				CPU 0x8039B9B4: AT = 0x9
+				CPU 0x8039B9B8: V0 == AT BL 0x8039BA24 (Both can use item)
+				CPU 0x8039B9BC: V0 = V0 + 0x1 (0xA as V0 always is 0x9 at this point)
+				CPU 0x8039B9C4: T7 = Age
+				CPU 0x8039B9CC: V0 == T7 B 0x8039BA20 (Can Use Item)
+				CPU 0x8039BA24: Start Point for usable items
+				CPU 0x8039BE34: Get item
+				Usability
+					MEM 0x8039F114: Inventory Slots
+					MEM 0x8039F12C: Equipment Slots
+					MEM 0x8039F13C: Items
+		Perform Action
+			CPU 0x8038A000: ???
+			CPU 0x8038AAE4: Perform Action Start
+			CPU 0x8038AB0C: JAL to Action Function
+			CPU 0x8038AB6C: Branch if empty bottle
+			CPU 0x8038AB98: Branch if action is not 0
+			CPU 0x8038ABBC: 
+			CPU 0x8038AC88: Remove Attack Flag
+			CPU 0x8038AD58: Check for attack flag
+			CPU 0x8038B098: ???
+			CPU 0x8038C790: ????
+		Running of ledges
+			CPU 0x803915E0: Check for hover boots
+		Set C-Button
+			CPU 0x800713C8: Set C-Button to 0xFF (Trade Sequence)
+			CPU 0x80390510: Set C-Button to A2 (Equip)
+			CPU 0x80390528: JAL 0x8006FB50
+			CPU 0x8039052C: Set C-Button Linked Slot to T5
+		Set Item (Using Item Slot ID)
+			A1 = Item Slot ID
+			A3 = Item ID
+			CPU 0x8007140C: Set Item
+		State Jump
+			CPU 0x800DDBB8: Jump to Ocarina & Text Box State
+				MEM 0x801135E4: Stores where to jump
+		Text Box
+			Loop
+				CPU 0x800DDBC0: Start
+				CPU 0x800DDC70: T9 = Language
+					9339B9D9
+				CPU 0x800DDC88: JAL 0x800D7B00 (Print Dialog Text)
+					Function RAM: 0C035EC0
+			Print
+				CPU 0x800D7B00: Print Start
+		Update Gear
+			CPU 0x800796C0: Start?
+			CPU 0x80079704: T9 = Shield
+			CPU 0x800797B0: Set Shield
+			CPU 0x800797CC: Set Tunic
+			CPU 0x800797EC: Set Boots
+			CPU 0x8007981C: Set Sword
+			CPU 0x8007983C: Update Boots Behaviour
+		Use Item
+			_JAL to Launch
+				_Not Used: Ocarina, Lens, Nut, Bean
+				CPU 0x8038A4D8: Jump Back (Use Melee Weapons)
+					Items: Swords, Deku Stick, Megaton Hammer
+				CPU 0x8038AFC8: Jump Back (Put Away Swords)
+					Items: Swords
+				CPU 0x8038AFD8: Jump Back (Put Away Items)
+					Items: Deku Stick, Slingshot, Boomerang, Bottle, Megaton Hammer
+				CPU 0x8038B004: Jump Back (Pull Out Swords & Deku Stick)
+					Items: Swords, Deku Stick
+				CPU 0x8038B024: Jump Back (Pull Out Items)
+					Items: Bomb, Bombchu, Boomerang, Slingshot, Hookshot, Longshot, Empty Bottle, Megaton Hammer
+				CPU 0x8038CCC8: Jump Back (Use Masks & Custom Items)
+			_Magic
+				CPU 0x800725D0: 
+				CPU 0x80072734: 
+				CPU 0x80072CF8: 
+			CPU 0x80079D4C: V0 = A1 - 0x12
+			CPU 0x80079D50: BLTZ V0, 0x80079D68 (Branch if action is below 12)
+			CPU 0x8038CA14: V1, 0x8038CE98 (Some items jump here)
+			CPU 0x8038CA3C: BEQ A2, R0, 0x8038CA74 (Branch if action is 0)
+			CPU 0x8038CA4C: BGEZL T0, 0x8038CA78 (Branch if not in water)
+			CPU 0x8038CA54: Get swim state
+			CPU 0x8038CA58: AT, R0, 0x0010 (10 = Hookshot)
+			CPU 0x8038CA68: BEQ A2, AT, 0x8038CA74 (Branch if action is 10 (Hookshot))
+			CPU 0x8038CA6C: AT, R0, 0x0011 (11 = Longshot)
+			CPU 0x8038CA70: BNE A2, AT, 0x8038CE98 (Branch if action isn't 0x11 (Longshot))
+			CPU 0x8038CA78: some place
+			CPU 0x8038CA84: BNEZ T4, 0x8038CB48
+			CPU 0x8038CA88: NOP
+			CPU 0x8038CA8C: BNE A2, AT, 0x8038CAAC (Branch if action isn't 6 (Deku Stick))
+			CPU 0x8038CAA8: BEQ T7, R0, 0x8038CB38 (Branch if out of Ammo)
+			CPU 0x8038CAB4: BNE A2, AT, 0x8038CAD0 (Branch if action isn't 2E (Magic Bean))
+			CPU 0x8038CAD8: SB A2, 0x0027 (SP) (Store Action)
+			CPU 0x8038CADC: Jump to 0x80079D48
+			CPU 0x8038CAE4: Return Here
+			CPU 0x8038CAEC: LB A2, 0x0027 (SP) (Restore Action)
+			CPU 0x8038CAF0: BLTZ V0, 0x8038CB48
+			CPU 0x8038CB1C: T5 = Ammunition
+			CPU 0x8038CB20: BEQ T5, R0, 0x8038CB38 (Branch if out of Ammo)
+			CPU 0x8038CB48: Some place
+			CPU 0x8038CB50: BNE A2, AT, 0x8038CBCC (Branch if action is not 42 (Lens of Truth))
+			CPU 0x8038CBD0: BNE A2, AT, 0x8038CC14 (Branch if action isn't 1B (Deku Nut))
+			CPU 0x8038CC14: Some place
+			CPU 0x8038CC30: BLTZ V0, 0x8038CCA0
+			CPU 0x8038CC3C: BNEL A2, AT, 0x8038CC54 (Branch if action isn't 18 (Farore's Wind))
+			CPU 0x8038CC70: T7 = Current Magic
+			CPU 0x8038CC7C: BNEZ AT, 0x8038CC90 (Branch if you have enough magic)
+			CPU 0x8038CCA4: BNEZ AT, 0x8038CCD8 (Branch if action is below 3A (Mask))
+			CPU 0x8038CCDC: BNEZ AT, 0x8038CCE8 (Branch if action is below 1C)
+			CPU 0x8038CCE4: BNEZ AT, 0x8038CCF0 (Branch if action is below 1E (Ocarina))
+			CPU 0x8038CCEC: BNEZ AT, 0x8038CD4C (Branch if action is below 1F (Empty Bottle))
+			CPU 0x8038CCF8: Call Dialog Trade Item???
+			CPU 0x8038CD10: BNEZ AT, 0x8038CE98 (Branch if action is below 25 (Use Bottle))
+			CPU 0x8038CD18: BEQL (Branch if action is action is above 2B (Dialog Items))
+			CPU 0x8038CD40: Set Perform Action on landing flag
+			CPU 0x8038CD44: Jump Back
+			CPU 0x8038CD48: Store Action to use when landing
+			CPU 0x8038CD50: BNEL A2, T4, 0x8038CBD88 (Branch if action isn't current action)
+			CPU 0x8038CD6C: Store Action
+			CPU 0x8038CDD4: Jump
+			CPU 0x8038CDE4: BGEZ V0, 0x8038CE4C
+			CPU 0x8038CE70: Call pre Pull out Item
+				CPU 0x8038A038: Pull out Item Call Function
+					CPU 0x8038A0A4: Pull out Item Call
+			CPU 0x8038D1B0: Jump here to use bottle?
+			Injection Point
+				CPU 0x8038CCAC: 
+			MEM 0x803AA6FC: Item Action Table
+		Use item Delay
+			CPU 0x8007A340: 5
+			CPU 0x8007B798: 6
+			CPU 0x8038A678: 1
+			CPU 0x8038A8F4: 2
+			CPU 0x8038ACB4: 3
+			CPU 0x8038B190: 4
+			CPU 0x8038C718: 7
+			CPU 0x8038C83C: 12
+			CPU 0x8038C868: 13
+			CPU 0x80391B14: 8
+			CPU 0x80391BAC: 9
+			CPU 0x80391BDC: 10
+			CPU 0x80391E58: 11
+		Use Item Launch
+			CPU 0x80389284: Jumps hack here in the end
+			CPU 0x8038C9B8: JAL 0x8038A0F8
+			CPU 0x8038C9C0: V0 is the action at this point
+			CPU 0x8038C9CC: V1 = Active Action (This is set whenever you use an item)
+			CPU 0x8038C9D0: T6 = Current Action (if you have item in hand, etc)
+			CPU 0x8038C9D4: BNE V1, T6, 0x8038CA14
+			CPU 0x8038C9E8: BGEZ T8, 0x8038CA3C
+		Warp
+			CPU 0x803A065C: BNEL T2, R0, 0x803A067C (Check if you're playing a ocarina)
+			CPU 0x803A0670: Jump to Is Playing Ocarina
+			CPU 0x803A4E34: Playing Ocarina
+			CPU 0x803A4F80: Check if you've clicked on the dialog
+			CPU 0x803A4F88: Warp Start
+			CPU 0x803A5034: Jump to create actor
+			test
+				1. 801DB094 = 803A4E34
+				2. 801DB270 = 0001
+				3. 801D8966 = 0004
+	Hooks
+		CPU 0x80003BCC: Called continously throughout the entire game
+		CPU 0x80020108: playing
+		CPU 0x800240E0: playing
+		CPU 0x8009BC18: Branch if in a menu
+		CPU 0x8009BC58: Branch if in a menu
+		CPU 0x8009BD64: playing early
+		CPU 0x8009CB34: When playing & not pausing
+	Memory
+		Link
+			Link State
+			MEM 0x801D8BF0: Disabled Item Groups
+				00000001 B Button
+			MEM 0x801D8BF4: Disabled Item Groups
+				00000001 Hookshot & Longshot (Global must be unset)
+				00000100 Trade Items
+				00010000 Bottles
+				01000000 Unused?
+			MEM 0x801D8BF8: Disabled Item Groups
+				00000001 Farore's Wind (Global must be unset)
+				00000300 Sun's Song
+				00030000 Warp Songs
+				01000000 Ocarina
+			MEM 0x801D8BFC: Disabled Item Groups
+				00010000 Global
+				01000000 Din's Fire & Nayru's Love (Global must be unset)
+			MEM 0x801DAAB8: Ground Water State
+			MEM 0x801DAB70: Last Used Button Index
+			MEM 0x801DAB72: Item in hand
+			MEM 0x801DAB74: Action to Perform when landing
+			MEM 0x801DAB7F: Current Mask Equipped
+			MEM 0x801DB09C: Link State (Word)
+				00000001 Disable control
+				00000002 Swiping Bottle
+				00000004 Connect Hookshot?
+				00000008 FPS Item in hand
+				00000010 Reset action icon
+				00000080 Freeze all object animations
+				00000100 Swing Sword
+				00000400 Navi will run away
+				00000800 Carrying
+				00001000 Loading Spinattack
+				00002000 Camera Side View (Ledge)
+				00004000 Camera overhead View
+				00010000 Z-Target Focusing
+				00018000 Z-Targeting Focus Target
+				00028000 Z-Targeting No Focus
+				00040000 Is set when exiting water with Z-Target
+				00100000 First Person Mode
+				00200000 Is Climbing
+				003C7080 If any of these are enabled, delay
+				00400000 Shielding
+				00800000 Is on Epona
+				02000000 Lock Camera
+				08000000 Focus camera in direction (In Water)
+				20000000 Talking
+					CPU 0x80390DFC: Enter Talking State
+					CPU 0x803A9C1C: Enter Talking State
+				30000000 Ocarina/Trade Item
+				80000000 Enter Grotto
+				CPU 0x8038D698: 
+				CPU 0x8038D9A0: 
+				CPU 0x8038D9CC: 
+			MEM 0x801DB0CE: State
+			Position
+				MEM 0x801DAA54: X
+				MEM 0x801DAA5C: Y
+		MEM 0x8011A5D0: Save RAM
+			Entrance
+				MEM 0x8011A5D0: Entrance Index
+				MEM 0x8011B964: Grotto Return Entrance Index (halfword)
+			Items
+				Buttons
+					MEM 0x8011A638: B, C-Left, C-Down, C-Right Items
+					MEM 0x8011A63C: C-Left, C-Down, C-Right Item Slots
+						CPU 0x8007847C: This JAL here ruins buttons under water if there's more than 2!
+				Capacity 
+					MEM 0x800F8CCE: Quiver Capacity
+					MEM 0x800F8CD0: Big Quiver Capacity
+					MEM 0x800F8CD2: Biggest Quiver Capacity
+					MEM 0x800F8CD6: Bomb Bag Capacity
+					MEM 0x800F8CD8: Big Bomb Bag Capacity
+					MEM 0x800F8CDA: Biggest Bomb Capacity
+					MEM 0x800F8CF6: Bullet Bag Capacity
+					MEM 0x800F8CF8: Big Bullet Bag Capacity
+					MEM 0x800F8CFA: Biggest Bullet Bag Capacity
+					MEM 0x800F8D06: Deku Stick (20) Capacity
+					MEM 0x800F8D08: Deku Stick (30) Capacity
+					MEM 0x800F8D0A: Deku Stick (40) Capacity
+					MEM 0x800F8D0C: Deku Nut Capacity
+					MEM 0x800F8D10: Deku Nut Capacity (255)
+				Equipment
+					Left Side
+						0x??6EE4DB Everything
+						MEM 0x8011A670: Unused
+						MEM 0x8011A671: Deku Stick & Nut Capacity
+							0x02 Deku Stick 10
+							0x04 Deku Stick 20
+							0x08 Deku Stick 30
+							0x10 Deku Nut 20
+							0x20 Deku Nut 30
+							0x30 Deku Nut 40
+							0x6E Everything
+						MEM 0x8011A672: Bullet Bag, Dive Meter & Wallet
+							0x02 Silver Scale
+							0x04 Gold Scale
+							0x10 Adult's Wallet
+							0x20 Giant's Wallet
+							0x40 Bullet Bag 30
+							0x80 Bullet Bag 40
+							0xC0 Bullet Bag 50
+							0xE4 Everything
+						MEM 0x8011A673: Quiver, Bomb Bag, Strength Upgrade
+							0x01 Quiver 30
+							0x02 Quiver 40
+							0x03 Quiver 50
+							0x08 Bomb Bag 20
+							0x10 Bomb Bag 30
+							0x18 Bomb Bag 40
+							0x40 Goron Bracelet
+							0x80 Silver Gauntlets
+							0xC0 Golden Gauntlets
+							0xDB Everything
+					MEM 0x8011A640: Selected Tunic&Boots, Sword&Shield
+					Right Side
+						0x7777???? Everything
+						MEM 0x8011A66C: Tunic & Boots
+							0x01 Kokiri Tunic
+							0x02 Goron Tunic
+							0x04 Zora Tunic
+							0x10 Kokiri Boots
+							0x20 Iron Boots
+							0x40 Hover Boots
+							0x77 Everything
+						MEM 0x8011A66D: Sword & Shield
+							0x01 Kokiri Sword
+							0x02 Master Sword
+							0x04 Biggorons Sword
+							0x08 Broken Giant's Knife Picture
+							0x0D Broken Giant's Knife
+							0x10 Kokiri Shield
+							0x20 Hylian Shield
+							0x40 Mirror Shield
+							0x77 Everything
+				Gear
+					MEM 0x001DAB6C: Tunic, Sword, Shield, Boots
+						CPU 0x8039E538: Get Boots (used for hover)
+							CPU 0x8039E554: Hover
+								CPU 0x80391618: This JAL causes you to fall
+								MEM 0x801DB2B0: Hover Time Remaining
+									CPU 0x803A0DB4: 
+							CPU 0x8039E558: End Hover
+						CPU 0x8039FC48: Get Boots
+						CPU 0x8039FC4C: Branch if hoverboots
+						CPU 0x8039FE4C: Get Boots
+						CPU 0x803A0C1C: Get Boots
+						CPU 0x803A0C64: Get Boots
+						CPU 0x803A0D88: Branch if not hoverboots (hover effect)
+				Inventory
+					Item Amount
+						MEM 0x8011A65C: Stick, Nut, Bomb, Bow
+						MEM 0x8011A660: Fire Arrow, Din's Fire, Slingshot, Ocarina
+						MEM 0x8011A664: Bombchu, Hookshot, Ice Arrow, Farore's Wind
+						MEM 0x8011A668: Boomerang, Lens of Truth, Beans, Beans Available
+					Items
+						MEM 0x8011A644: Stick, Nut, Bomb, Bow
+						MEM 0x8011A648: Fire Arrow, Din's Fire, Slingshot, Ocarina
+						MEM 0x8011A64C: Bombchu, Hookshot, Ice Arrow, Farore's Wind
+						MEM 0x8011A650: Boomerang, Lens of Truth, Beans, Hammer
+						MEM 0x8011A654: Ice Arrow, Nayru's Love, Bottle 1, Bottle 2
+						MEM 0x8011A658: Bottle 3, Bottle 4, Adult Trade, Child Trade
+				Other
+				Status
+					MEM 0x8011A674: Heart Pieces
+					MEM 0x8011A675: Spiritual Stones, Gear, Song of Time, Song of Storm
+					MEM 0x8011A676: Songs
+					MEM 0x8011A677: Minuet, Boloero, Medallions
+			Link
+				MEM 0x8011A5D4: Age
+				MEM 0x8011A600: Current Health (Halfword)
+				MEM 0x8011A602: Magic Meter Size (Byte)
+				MEM 0x8011A603: Current Magic (Byte)
+				MEM 0x8011A60A: Can Use Magic (Byte)
+			Records
+				MEM 0x8011B490: Fish Size
+			Skulltulas
+				Changing Max Amount
+					CPU 0x8038AC94: Set to Max Skulltula Amount
+					CPU 0x8038ACA8: Set to 0x0000
+					CPU 0x8038ACB0: Prefix to be used
+					CPU 0x8038ACB8: Set to 0x00FF (This should always be higher than skulltula count)
+					CPU 0x8038AD8C: Set to Max Skulltula Amount
+				MEM 0x8011A6A0: Skulltula Tokens
+					CPU 0x8038AC94: 64
+					CPU 0x8038ACA8: -64 (Reduces skulltula display amount to 0 so that it displays 00)
+					CPU 0x8038ACB8: 64
+				MEM 0x8011B46C: Forest Temple, Jabu Jabu, Dodong's Cavern, Deku Tree
+				MEM 0x8039F194: Skulltula Table
+			Time of Day
+				MEM 0x8011A5DC: Time of Day
+				MEM 0x8011A5E0: Day/Night
+		MEM 0x8011B9A0: Global Timer (Halfword)
+			0x176F = 99:59 (Highest without visual errors)
+			CPU 0x800775E0: Tick
+			CPU 0x800775E4: V0 = Time
+			CPU 0x800775E8: Branch if time isn't 0
+			CPU 0x80077644: If (Time < 60) {AT = 1} else {AT = 0}
+			CPU 0x80077648: Branch if AT = 1 (Timer < 60)
+			CPU 0x800776DC: Play Tick Sound
+			CPU 0x80078004: unknown
+		MEM 0x8011B9D9: Language (Byte)
+			CPU 0x80074574: T8 = Language
+			CPU 0x800758BC: text stuff?
+			CPU 0x800764D0: T7 = Language
+			CPU 0x80076504: Update Language
+		MEM 0x801C6FA0: Game Speed/State (Halfword)
+			0x1 = File Menu
+			0x2 = Pause Menu
+			0x3 = Default
+		MEM 0x801C84B4: Button Activators
+			0000 No Button
+			0001 C-Right
+			0002 C-Left
+			0004 C-Down
+			0008 C-Up
+			0010 R
+			0020 L
+			0100 D-Pad Right
+			0200 D-Pad Left
+			0400 D-Pad Down
+			0800 D-Pad Up
+			1000 Start
+			2000 Z
+			4000 B
+			8000 A
+		MEM 0x801C84C8: Control Stick Activators
+			0x003C Up
+			0x00C4 Down
+			0x3C00 Right
+			0xC400 Left
+		MEM 0x801D8870: Conversation (English)
+			Coloring
+				Color Addresses
+					MEM 0x801132C0: White Text
+					MEM 0x801132C4: Red Text
+					MEM 0x801132C8: Green Text
+					MEM 0x801132CC: Blue Text
+					MEM 0x801132D0: Light Blue Text
+					MEM 0x801132D4: Purple Text
+					MEM 0x801132D8: Yellow Text
+					MEM 0x801132DC: Black Text
+				Color RGBA
+					Black
+						CPU 0x800D6DF8: Red, Green & Blue (Black)
+					Blue
+						CPU 0x800D6CAC: Blue (Blue)
+						CPU 0x800D6CB0: Red (Blue)
+						CPU 0x800D6CB4: Green (Blue)
+					Green
+						MEM 0x801C7DEC: Red (Green)
+						MEM 0x801C7DEE: Green (Green)
+						MEM 0x801C7DF0: Blue (Green)
+					Light Blue
+						CPU 0x800D6D18: Blue (Light Blue)
+						CPU 0x800D6D40: Red (Light Blue)
+						CPU 0x800D6D44: Green (Light Blue)
+					Purple
+						CPU 0x800D6D74: Blue (Purple)
+						CPU 0x800D6D78: Red (Purple)
+						CPU 0x800D6D7C: Green (Purple)
+					Red
+						CPU 0x800D6BDC: Green & Blue (Red)
+						CPU 0x800D6BE4: Red (Red)
+					White
+						CPU 0x800D6E20: Red, Green & Blue (White)
+					Yellow
+						CPU 0x800D6DB4: Green (Yellow)
+						CPU 0x800D6DBC: Red (Yellow)
+						CPU 0x800D6DE0: Blue (Yellow)
+				CPU 0x800D90EC: Jump To Set Color
+				MEM 0x801D8954: Current Text Color
+			CPU 0x800D8F9C: Branch if not 05 Command (Color)
+			CPU 0x800D9018: Branch if not Less than 20 Command
+			CPU 0x800DBD74: Branch if not 1E Command (Records)
+			Cursor Color
+				CPU 0x800D7030: Calculate Blue
+				CPU 0x800D70A0: Set Blue
+				CPU 0x800D70A8: Set Green
+				CPU 0x800D70B0: Set Red
+				MEM 0x80112F20: Red (Word)
+				MEM 0x80112F24: Green (Word)
+				MEM 0x80112F28: Blue (Word)
+			Records
+				CPU 0x800DBDCC: Branch if not 02 Command (Fish)
+				CPU 0x800DBEE8: Branch if not Less than 07 Command
+			Text
+				CPU 0x800D6D80: Set Colors
+				CPU 0x800D900C: Read Letter
+				CPU 0x800DB55C: Set Letter
+				CPU 0x800DCA9C: Set Convo
+		MEM 0x801D8DD4: Menu State
+			0x01 Open Menu (Only run when a menu isn't open)
+			0x06 Finish Opening Menu (Only run when a menu is open)
+			0x07 Open Save Panel (Only run when pause menu is open)
+			0x08 Open Game Over (Only run when a menu isn't open)
+			0x09 Open Game Over (Only run when a menu is open)
+			0x0F Save (Only run when a menu is open)
+			0x10 Open Continue / Quit (Only run when a menu is open)
+			0x11 Continue/Quit (Result Depends on Selected Option: 0x0 continue, 0x4 quit)
+			0x12 Close Menu (Only run when pause menu is open)
+			CPU 0x8039C574: Begin Opening Save Panel
+			MEM 0x801D8E60: Selected Menu Option
+				CPU 0x8039CA1C: Get Option (Save - Pause Menu)
+					CPU 0x8039CAA0: Select Save
+						CPU 0x8039CAB8: Jump to save? 0x800C806C
+						CPU 0x8039CAC0: Jump to save? 0x8009D894
+						CPU 0x8039CAD8: Jump to save? 0x800905D4
+						CPU 0x8039CB10: Jump to save? 0x8039CB10
+						CPU 0x8039CB48: Jump to save? 0x800C7200
+						CPU 0x8039CB6C: Jump to save? 0x8006D8E0
+				CPU 0x8039D7F0: Get Option (Save - Game Over Screen)
+					CPU 0x800905D4: Save?
+						CPU 0x80090614: Get Save RAM
+	Patches
+		Bottle Dupe & Ocarina Items (Jump Methods)
+			_Info
+				The reason why these glitches work is because a flag telling you to use an action when you land isn't cleared properly. I clear this flag whenever you press & use an item
+			CPU 0x8038CA88: NOP, You can inject here (only when not pausing)
+				MEM 0x8038CA88:
+					Set to 0xA0E0069D to remove Bottle Dupe & Ocarina Items
+		Bottle Dupe (Pause Method)
+			_Info
+				The game has various checks to decide if you're allowed to pause. I add the flag that is set during a bottle swipe (0x2) to the ones that are not allowed
+				Warning: This didn't patch the glitch entirely. You can still pause the first frame of the swipe as the flag is set after the swipe start
+			CPU 0x800793A0: Lower Bytes of bitflags that aren't allowed
+				MEM 0x800793A0: 
+					Set to 0x34210082 to prevent pausing while swiping a bottle
+			CPU 0x803A05A0: get state
+			CPU 0x803A5738: Swipe Start
+			CPU 0x803A5860: Branch on first swipe frame
+			CPU 0x803A5958: Set Swipe State
+			MEM 0x801DABDE: 2648 = Bottle Swiping
+		Dive
+			CPU 0x803A02F0: This Branch skips past water detection when you don't have control
+		Fishes
+			_Info
+				Converter: http://www.h-schmidt.net/FloatConverter/
+				MEM 0x8011B490: This is the location in the SRAM where they store the size of your biggest fish, stored as a 32bit fixed point rounded down
+					First 7 bits, maximum value is 0x7F
+				MEM 0x801F2950: This is where the game stores the size of the fish you are currently holding, stored as a floating point
+			CPU 0x801E3228: Get Fish Size from SRAM
+			CPU 0x801E325C: Load Fish Size
+			CPU 0x801E9B4C: Get Fish Size
+			CPU 0x801F01C8: F6 = 0x0000(V0)
+			CPU 0x801F01D8: 0x0000(A3) = F6
+			CPU 0x801F01F4: F0 = 0x0000(A3) (0x801F5DE8)
+			CPU 0x801F0200: F10 = F0
+			CPU 0x801F020C: Store (have won the price?)
+			CPU 0x801F0210: V0 = F10
+			CPU 0x801F0240: Store new fish size
+		Golden Scale
+			_Info
+				0x00040000 is for swimming
+				MEM 0x80022BE8: This is where the game checks for various states you can't collect items in, we change it to make it so that you can collect items after exiting water with Z-Target
+					3C010038 set it to this to remove the flag
+			bad collection
+				CPU 0x80022BD4: Start
+				CPU 0x80022C04: Store 
+					38 (Wrong)
+					4C (Correct)
+				CPU 0x80022CD0: Store Recieve
+				CPU 0x803A4A6C: LB V1, 0x0424(A2)
+					MEM 0x801DAE54: (byte)
+						0x38 (Incorrect)
+						0x4C (Correct)
+				CPU 0x803A4A70: BNEL
+					V1 = 38 (Incorrect)
+					V1 = 4C (Correct)
+				CPU 0x803A4A94: SLL 0x1
+					T6 = A8 (Wrong)
+					T7 = E4 (Correct)
+				CPU 0x803A4AA0: ADDIU
+					T7 = 150 (Wrong)
+					T7 = 1C8 (Correct)
+				CPU 0x803A4AA8: ADDU
+					T8 = 14A (Wrong)
+					T8 = 1C2 (Normal)
+				CPU 0x803A4ABC: Store wrong collection
+					803A9FCE (Wrong)
+					803AA046 (Normal)
+				CPU 0x803A4AD4: Collection goes wrong
+					MEM 0x803A9FCE: Glitched
+					MEM 0x803AA046: Standard
+				MEM 0x8011EF7C: Wrong
+					803A9FCE (Wrong)
+					803AA046 (Normal) 
+			CPU 0x80022BE8: Upper bytes of states not allowed while collecting
+			CPU 0x80022BEC: Lower bytes of states not allowd while collecting
+			CPU 0x80022BF0: T6 = 0x066C(A3)
+			CPU 0x80022BFC: Branch and skip stuff if z-target thingy is active
+			CPU 0x80022C70: Branch if you're to far away
+			CPU 0x80022CA8: stepping
+			CPU 0x80022CD4: Store to 0x801DAE58
+			CPU 0x801F0534: Clear Var
+			CPU 0x801F0544: Jump to Collection (Correct)
+			CPU 0x801F06AC: See if you should get goldscale
+			CPU 0x801F06B4: This branch causes the gold scale
+			CPU 0x801F06E0: Jump to Collecttion (Incorrect)
+			CPU 0x801F0AF4: A Jump
+				CPU 0x801E7538: A Jump
+					CPU 0x801E7564: A Jump
+						CPU 0x801E75A8: A JR
+						CPU 0x801E75CC: prog
+			CPU 0x80395088: Set Var
+			CPU 0x803A1F84: Jump Past
+			CPU 0x803A1FAC: No Branch
+			CPU 0x803A1FE0: No Jump
+			CPU 0x803A1FF0: No Jump
+			CPU 0x803A2000: No Jump
+			CPU 0x803A2008: T5 = 0x0428(S0)
+				MEM 0x801DAE58: 
+					Correct: 801FCEF0
+					Incorrect: 0
+			CPU 0x803A2014: BNEL
+				Correct: Do not Branch (T5 = 801FCEF0)
+				Incorrect: Branch (T5 = 0)
+			CPU 0x803A201C: Jump to Set Var
+			MEM 0x801F2950: Current Fish (Floating Point)
+			MEM 0x801FD008: When This is set, you do not receive gold scale
+		ISG (Regular Method)
+			_Info
+				I fix ISG by clearing the Attacking flag at a specific function that runs when doing a bunch of things (unpausing, putting away items, interacting, etc.)
+			CPU 0x80079714: Runs when changing item in hand unpausing, putting away ocarina, interacting, etc.
+				MEM 0x80079718: NOP
+					Set to 0xA0800833 to remove ISG
+		Prevent Opening Chests Under Water
+			_Info
+				1. Normally you can't open chests under water because of a flag that is set when you're swimming in water.
+				2. However, when using hookshot/longshot, that flag is unset.
+				3. As a result, by hooking and landing directly at the bottom, you won't have entered the swimming/sinking state, leaving the flag unset, allowing you to open chests.
+				4. This patch will make it so that using hookshot/longshot doesn't unset the flag.
+			CPU 0x803A73B0: Unsets the Flag preventing you from opening chests
+				MEM 0x803A73B0:
+					Set to 0x2401FFFF to stop it from unsetting the flag
+			Research
+				CPU 0x800798B8: not
+				CPU 0x8038C7C4: not
+				CPU 0x80393F64: Apply Flag That Disables Chests from being opened when entering water
+				CPU 0x803A059C: not
+				CPU 0x803A05CC: not
+				CPU 0x803A0760: not
+				CPU 0x803A1B2C: Apply Flag That Disables Chests form being opened while swimming
+				CPU 0x803A72E8: not
+				CPU 0x803A73B0: This AND command removes the flag when usign hookshot/longshot
+				CPU 0x803A73C0: removes
+		Shield Swipe
+			CPU 0x8038AA40: Check if a button has been pressed
+			CPU 0x8038AAB8: This is where it jumps past to Use Item
+			CPU 0x8038AABC: Set Stored Action
+			CPU 0x8038AAC4: Set Last Used Button Index
+			CPU 0x8038AAD4: Here
+			CPU 0x8038B6A0: Check if an action is stored
+			CPU 0x8038C9A0: Use Item
+			CPU 0x8038CE98: Back
+		Super Slide & Ground Jump
+			_Info
+				In the pickup function, set flag 100 if you're shielding
+			Injection Method
+				CPU 0x80003BCC: Use this as the hook
+			Testing
+				CPU 0x80392DEC: Add Shielding State
+				CPU 0x80395490: Add Is Carrying State
+				CPU 0x8039DF74: Check if you're carrying stuff
+				CPU 0x8039DFAC: Branch if not carrying
+				MEM 0x801dae4c: ?
+	W Hacks
+		Color Engine
+			MEM 0x800D6BD0: Color Table
+				Default Colors
+					MEM 0x800D6CD0: White
+					MEM 0x800D6CD4: Red
+					MEM 0x800D6CD8: Green
+					MEM 0x800D6CDC: Blue
+					MEM 0x800D6CE0: Light Blue
+					MEM 0x800D6CE4: Pink
+					MEM 0x800D6CE8: Yellow
+					MEM 0x800D6CEC: Black
+			MEM 0x801D8954: Current Text Color
+		CPU 0x803B2DC4: JAL to Zelda Map Select
+			CPU 0x803B32C4: JAL to Zelda Map Select
+		Custom Item Usability
+			CPU 0x8006F344: Disables Sun's Song
+			MEM 0x800F7350: Scene Table
+			MEM 0x800F7355: Kakariko Village
+			MEM 0x801D8BF0: Restriction Flags
+		Use Sword under water
+			CPU 0x8006E8A0: Change to 0x24050000 (This will include the B button in the water usability loop)
+			CPU 0x8006E8DC: Change to 0x241F003C (Will make Master Sword usable under water, replacing Hookshot)
+			CPU 0x80388E6C: Remove climbing
+			CPU 0x80388EE4: Jump to remove climing
+				CPU 0x80393DF4: Jump to jump to remove climbing
+			CPU 0x8038CA58: Change to 0x24010003 (This will make the Sword function usable under water, replacing Hookshot)
+			CPU 0x80394038: Climb under water check?
+	W Tests
+		Use Hookshot in air
+			Aiming
+				CPU 0x803A05C8: Remove loaded state???
+			test
+				CPU 0x800216E8: 00000008 (Hookshot in hand)
+				CPU 0x80021710: Branch if not hookshot in hand
+				CPU 0x80023E50: 00000040
+				CPU 0x80023EA0: Varies
+				CPU 0x80079398: 20000080
+				CPU 0x80079478: 00000010
+				CPU 0x800798D8: BFF07FFF
+				CPU 0x8007A32C: 00000080
+				CPU 0x801DFFA8: 00000400
+				CPU 0x8021AD04: 100004C0
+				CPU 0x80389C44: 08000000
+				CPU 0x8038A524: 40030000
+				CPU 0x8038A584: 00000010
+				CPU 0x8038A8CC: 20008000
+				CPU 0x8038AD54: 00000100
+				CPU 0x8038D688: BFFFFFFF
+				CPU 0x8038D6B4: 20000080
+				CPU 0x8038D794: 02001000
+				CPU 0x8038FB0C: 00000080
+				CPU 0x803914F8: 2800000
+				CPU 0x8039DF04: 
+				CPU 0x8039E6BC: A0000000
+				CPU 0x8039FD08: 
+				CPU 0x803A05A0: FFBFFDFD (Remove Loaded State)
+				CPU 0x803A0714: 00000800
+				CPU 0x803A083C: 00806080
+				CPU 0x803A0868: 04000080
+				CPU 0x803A08E0: 30000080
+				CPU 0x803A0A64: 20000020
+				CPU 0x803A0A74: 20000020
+			Use
+				CPU 0x803A0670: Jump to Hook functions
+				CPU 0x803A72F4: Branch when entering flying state?
+				During Hook
+					CPU 0x803A1BE8: During FPS Mode
+				During Hook (shooting  flying)
+					_Call
+						CPU 0x800230B0: Store soundeffect
+							CPU 0x800230A0: Sound repeater
+								CPU 0x8021FCE8: Start
+									CPU 0x80220364: Jump to Start
+										MEM 0x801E49A4: Stores where to jump
+											CPU 0x8021FA50: Store where to jump
+												CPU 0x8021FB48: Branch if longshot?
+												CPU 0x8021FB5C: Jump to store where to jump
+								CPU 0x8021FD38: Hookshot Jump to Sound Repeater
+						CPU 0x80024B34: Branch if soundeffect isn't set
+						CPU 0x80024B3C: JAL to function
+					CPU 0x80024540: Start hook function
+					CPU 0x80024580: Play Shoot Sound Effect
+				Hook Connect
+					CPU 0x803A72C8: Hook Connect Start
+				Hook End
+					CPU 0x803A1D50: Exit FPS
+					CPU 0x803A73B0: Remove Disable Chest Flag When Ending Hook
+				Reach Destination
+					CPU 0x8039AB68: Reach Destination Start

@@ -1,0 +1,10 @@
+# Output files
+*.z64
+*.yaz0
+*.elf
+*.o
+
+# Other files we don't want to track
+baserom
+*.n64
+*.sav

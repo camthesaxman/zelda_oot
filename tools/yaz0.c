@@ -39,7 +39,7 @@ void yaz0_decode(uint8_t* src, uint8_t* dst, int uncompressedSize)
             uint8_t byte1 = src[srcPlace];
             uint8_t byte2 = src[srcPlace + 1];
             srcPlace += 2;
-            
+
             unsigned int dist = ((byte1 & 0xF) << 8) | byte2;
             unsigned int copySource = dstPlace - (dist + 1);
 
@@ -62,10 +62,10 @@ void yaz0_decode(uint8_t* src, uint8_t* dst, int uncompressedSize)
                 dstPlace++;
             }
         }
-        
+
         // use next bit from "code" byte
         currCodeByte <<= 1;
-        validBitCount -= 1;    
+        validBitCount -= 1;
     }
 }
 

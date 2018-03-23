@@ -18,7 +18,7 @@ static unsigned long int get_time_milliseconds(void)
 {
 #ifdef __linux__
     struct timespec tspec;
-    
+
     clock_gettime(CLOCK_MONOTONIC, &tspec);
     return (tspec.tv_sec * 1000) + tspec.tv_nsec / 1000000;
 #else
@@ -93,7 +93,7 @@ static void decompress_file(const char *inputFileName, const char *outputFileNam
     if (input[0] != 'Y' || input[1] != 'a' || input[2] != 'z' || input[3] != '0')
         util_fatal_error("file '%s' does not have a valid Yaz0 header", inputFileName);
     uncompSize = util_read_uint32_be(input + 4);
-    
+
     // decompress data
     output = malloc(uncompSize);
 
@@ -112,7 +112,7 @@ static void decompress_file(const char *inputFileName, const char *outputFileNam
     FILE *outFile = fopen(outputFileName, "wb");
     fwrite(output, uncompSize, 1, outFile);
     fclose(outFile);
-    
+
     free(input);
     free(output);
 
@@ -140,12 +140,12 @@ int main(int argc, char **argv)
     const char *outputFileName = NULL;
     bool decompress = false;
     bool verbose = false;
-    
+
     // parse arguments
     for (i = 1; i < argc; i++)
     {
         char *arg = argv[i];
-        
+
         if (arg[0] == '-')
         {
             if (strcmp(arg, "-d") == 0)
@@ -178,7 +178,7 @@ int main(int argc, char **argv)
             }
         }
     }
-    
+
     if (inputFileName == NULL)
     {
         puts("no input file specified");

@@ -7,7 +7,7 @@ all: $(PROGRAMS)
 yaz0: yaz0tool.c yaz0.c util.c
 	$(CC) $(CFLAGS) $^ -o $@
 
-makeromfs: makeromfs.c yaz0.c util.c
+makeromfs: makeromfs.c n64chksum.c util.c
 	$(CC) $(CFLAGS) $^ -o $@
 
 clean:

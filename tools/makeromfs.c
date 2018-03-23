@@ -7,9 +7,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "n64chksum.h"
 #include "util.h"
 
-#define MAX_ROM_SIZE 0x02000000
+#define ROM_SIZE 0x02000000
 
 enum InputObjType
 {
@@ -25,27 +26,20 @@ struct InputFile
     uint8_t *data;
     size_t size;
     unsigned int valign;
-    
+
     uint32_t virtStart;
     uint32_t virtEnd;
     uint32_t physStart;
     uint32_t physEnd;
 };
 
-static FILE *g_outFile;
-static size_t g_outFileSize;
-
 static struct InputFile *g_inputFiles = NULL;
 static int g_inputFilesCount = 0;
 
-static void pad_rom(void)
+static unsigned int round_up(unsigned int num, unsigned int multiple)
 {
-    // This is such a weird thing to pad with. Whatever, Nintendo.
-    while (g_outFileSize < MAX_ROM_SIZE)
-    {
-        fputc(g_outFileSize & 0xFF, g_outFile);
-        g_outFileSize++;
-    }
+    num += multiple - 1;
+    return num / multiple * multiple;
 }
 
 static bool is_yaz0_header(const uint8_t *data)
@@ -61,7 +55,7 @@ static void compute_offsets(void)
     size_t physOffset = 0;
     size_t virtOffset = 0;
     int i;
-    
+
     for (i = 0; i < g_inputFilesCount; i++)
     {
         bool compressed = false;
@@ -76,9 +70,7 @@ static void compute_offsets(void)
             g_inputFiles[i].size = g_inputFilesCount * 16;
         }
 
-        // align virtual offset
-        if (virtOffset % g_inputFiles[i].valign != 0)
-            virtOffset += g_inputFiles[i].valign - (virtOffset % g_inputFiles[i].valign);
+        virtOffset = round_up(virtOffset, g_inputFiles[i].valign);
 
         if (g_inputFiles[i].type == OBJ_NULL)
         {
@@ -89,10 +81,8 @@ static void compute_offsets(void)
         }
         else if (compressed)
         {
-            size_t compSize = g_inputFiles[i].size;
+            size_t compSize = round_up(g_inputFiles[i].size, 16);
             size_t uncompSize = util_read_uint32_be(g_inputFiles[i].data + 4);
-
-            compSize = (compSize + 0xF) & ~0xF;
 
             g_inputFiles[i].virtStart = virtOffset;
             g_inputFiles[i].virtEnd   = virtOffset + uncompSize;
@@ -117,57 +107,70 @@ static void compute_offsets(void)
     }
 }
 
-static void build_rom(void)
+static void build_rom(const char *filename)
 {
+    uint8_t *romData = calloc(ROM_SIZE, 1);
+    size_t pos = 0;
     int i;
     int j;
+    uint32_t chksum[2];
+    FILE *outFile;
 
     for (i = 0; i < g_inputFilesCount; i++)
     {
-        size_t size;
-        size_t padSize;
+        size_t size = g_inputFiles[i].size;
 
-        //puts(g_inputFiles[i].name);
-
-        size = g_inputFiles[i].size;
-
-        padSize = (size + 0xF) & ~0xF;
-
-        if (g_outFileSize + padSize > MAX_ROM_SIZE)
+        if (pos + round_up(size, 16) > ROM_SIZE)
             util_fatal_error("size exceeds max ROM size of 32 KiB");
+
+        assert(pos % 16 == 0);
 
         switch (g_inputFiles[i].type)
         {
         case OBJ_FILE:
             // write file data
-            fwrite(g_inputFiles[i].data, g_inputFiles[i].size, 1, g_outFile);
-
-            // add padding
-            for (j = size; j < padSize; j++)
-                fputc(0, g_outFile);
+            memcpy(romData + pos, g_inputFiles[i].data, size);
+            pos += round_up(size, 16);
 
             free(g_inputFiles[i].data);
             break;
         case OBJ_TABLE:
             for (j = 0; j < g_inputFilesCount; j++)
             {
-                uint8_t fileEntry[16];
+                util_write_uint32_be(romData + pos +  0, g_inputFiles[j].virtStart);
+                util_write_uint32_be(romData + pos +  4, g_inputFiles[j].virtEnd);
+                util_write_uint32_be(romData + pos +  8, g_inputFiles[j].physStart);
+                util_write_uint32_be(romData + pos + 12, g_inputFiles[j].physEnd);
 
-                util_write_uint32_be(fileEntry +  0, g_inputFiles[j].virtStart);
-                util_write_uint32_be(fileEntry +  4, g_inputFiles[j].virtEnd);
-                util_write_uint32_be(fileEntry +  8, g_inputFiles[j].physStart);
-                util_write_uint32_be(fileEntry + 12, g_inputFiles[j].physEnd);
-                
-                fwrite(fileEntry, sizeof(fileEntry), 1, g_outFile);
+                pos += 16;
             }
             break;
         case OBJ_NULL:
             break;
         }
-        g_outFileSize += padSize;
     }
-    
-    pad_rom();
+
+    // Pad the rest of the ROM
+    while (pos < ROM_SIZE)
+    {
+        // This is such a weird thing to pad with. Whatever, Nintendo.
+        romData[pos] = pos & 0xFF;
+        pos++;
+    }
+
+    // calculate checksum
+    n64chksum_calculate(romData, 6105, chksum);
+    util_write_uint32_be(romData + 0x10, chksum[0]);
+    util_write_uint32_be(romData + 0x14, chksum[1]);
+
+    // write file
+    outFile = fopen(filename, "wb");
+    if (outFile == NULL)
+        util_fatal_error("failed to open file '%s' for writing", filename);
+    fwrite(romData, ROM_SIZE, 1, outFile);
+    fclose(outFile);
+
+    free(romData);
 }
 
 static struct InputFile *new_file(void)
@@ -217,17 +220,17 @@ static void parse_line(char *line, int lineNum)
 {
     char *token = line;
     int i = 0;
-    
+
     char *filename = NULL;
     enum InputObjType type = -1;
     int valign = 1;
     struct InputFile *file;
-    
+
     // iterate through each token
     while (token[0] != 0)
     {
         char *nextToken = token_split(token);
-        
+
         if (token[0] == '#')  // comment - ignore rest of line
             return;
 
@@ -299,9 +302,9 @@ static void parse_list(char *list)
     while (line[0] != 0)
     {
         char *nextLine = line_split(line);
-        
+
         parse_line(line, lineNum);
-        
+
         line = nextLine;
         lineNum++;
     }
@@ -328,17 +331,12 @@ int main(int argc, char **argv)
     }
 
     list = util_read_whole_file(argv[1], NULL);
-    g_outFile = fopen(argv[2], "wb");
-    if (g_outFile == NULL)
-        util_fatal_error("failed to open file '%s' for writing", argv[2]);
-    g_outFileSize = 0;
 
     parse_list(list);
     compute_offsets();
-    build_rom();
+    build_rom(argv[2]);
 
     free(list);
-    fclose(g_outFile);
 
     return 0;
 }

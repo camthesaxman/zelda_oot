@@ -1,7 +1,7 @@
 # This file is used by the makeromfs tool and lists all of the files contained in the ROM.
 
-file baserom/makerom.bin
-file baserom/boot.bin
+file build/makerom.bin
+file build/boot.bin
 filetable
 file baserom/Audiobank.bin
 file baserom/Audioseq.bin

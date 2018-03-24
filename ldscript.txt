@@ -1,14 +1,13 @@
+/* Linker script for compiling object files into simple flat binaries. */
+
+OUTPUT_FORMAT(binary)
 SECTIONS
 {
-    . = 0x80000000;
-    ROM :
-    {
-        asm/rom.o(.text);
-    }
+    .text         : { *(.text);   }
+    .bss (NOLOAD) : { *(.bss);    }
+    .data         : { *(.data);   }
+    .rodata       : { *(.rodata); }
 
     /* Discard everything not specifically mentioned above. */
-    /DISCARD/ :
-    {
-        *(*);
-    }
+    /DISCARD/ : { *(*); }
 }

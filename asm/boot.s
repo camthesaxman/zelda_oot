@@ -1,25 +1,4 @@
-
-.byte  0x80, 0x37, 0x12, 0x40 # PI BSD Domain 1 register
-.word  0x0000000F # clock rate setting
-.word  EntryPoint # entry point
-.word  0x00001449 # release
-.word  0xEC7011B7 # checksum1
-.word  0x7616D72B # checksum2
-.word  0x00000000 # unknown
-.word  0x00000000 # unknown
-.ascii "THE LEGEND OF ZELDA " # ROM name: 20 bytes
-.word  0x00000000 # unknown
-.word  0x00000043 # cartridge
-.ascii "ZL"       # cartridge ID
-.ascii "E"        # country
-.byte  0x00       # version
-
-boot:
-.incbin "baserom.z64", 0x40, 0x3C0
-boot_end:
-
-EntryPoint:
-.incbin "baserom.z64", 0x400, 0x6D50
+.incbin "baserom.z64", 0x1060, 0x60F0
 
 # some debug strings
 
@@ -120,5 +99,4 @@ EntryPoint:
 # build date
 .asciz "98-10-21 04:56:31"
 
-.align 2, 0
-.incbin "baserom.z64", 0x7420
+.space 18

@@ -1,4 +1,5 @@
 # Output files
+build/
 *.z64
 *.yaz0
 *.elf

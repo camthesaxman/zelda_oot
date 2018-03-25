@@ -27,7 +27,7 @@ file baserom/staff_message_data_static.bin align(0x1000)
 file baserom/map_grand_static.bin align(0x1000)
 file baserom/map_i_static.bin align(0x1000)
 file baserom/map_48x85_static.bin align(0x1000)
-file baserom/code.bin.yaz0 align(0x1000)
+file build/code.bin.yaz0 align(0x1000)
 file baserom/n64dd.bin.yaz0
 file baserom/ovl_title.bin.yaz0
 file baserom/ovl_select.bin.yaz0

@@ -22,6 +22,7 @@ $(shell mkdir -p build)
 # specify virtual addresses of each code file
 build/makerom.bin: TEXT_VADDR := 0x80000000
 build/boot.bin:    TEXT_VADDR := 0x80001060
+build/code.bin:    TEXT_VADDR := 0x800110A0
 
 
 #### Main Targets ###
